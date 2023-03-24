@@ -1,2 +1,188 @@
 @import "../../SCSS/utils.scss";
 
+.upper-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid rgba(63, 78, 101, 0.2);
+    padding: 13px 0;
+
+    &__about {
+        display: flex;
+    }
+
+    &__about > div:not(:first-child) {
+        border-left: 1px dashed rgba(63, 78, 101, 0.1);
+    }
+
+    .contacts-block {
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: "Inter";
+            font-style: normal;
+            margin-left: 15px;
+
+            &-main {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 130.02%;
+                color: #111111;
+            }
+            &-add {
+                font-weight: 300;
+                font-size: 12px;
+                line-height: 150%;
+                color: #3f4e65;
+            }
+        }
+    }
+
+    &__links {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #3f4e65;
+    }
+
+    &__link-list {
+        display: flex;
+        list-style-type: none;
+
+        li {
+            padding: 0 30px;
+        }
+
+        li:not(:first-child) {
+            border-left: 1px dashed rgba(63, 78, 101, 0.1);
+        }
+    }
+}
+
+.lower-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(63, 78, 101, 0.2);
+    font-family: "Inter";
+    font-style: normal;
+
+    &__contacts {
+        display: flex;
+
+        &-info {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 10px;
+        }
+
+        &-phone {
+            color: #111;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 150%;
+        }
+        &-schedule {
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 150%;
+        }
+        &-link {
+            color: #3f4e65;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 150%;
+        }
+
+        #call-link {
+            text-decoration: underline;
+        }
+
+        img {
+            width: 70px;
+            height: 92px;
+        }
+    }
+
+    &__catalogue-button {
+        color: #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+
+        width: max-content;
+        height: max-content;
+
+        padding: 21px 54px;
+        background: #ffc85e;
+        border-radius: 79px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    &__search-input {
+        max-width: 80%;
+    }
+
+    &__search-input-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        gap: 10px;
+
+        background: #ededed;
+        border-radius: 36px;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            width: 39px;
+            height: 39px;
+            background-image: url("../../../public/img/search-icon.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+    &__pricelist-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 21px 43px;
+        gap: 12px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+
+        background: #ffc85e;
+        border-radius: 79px;
+    }
+}

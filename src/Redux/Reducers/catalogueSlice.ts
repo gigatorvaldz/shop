@@ -1,23 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-
-// Note: JSON upd
-
-
-// interface CatalogueStateI {
-//   catalogue: Array<PostI>
-// }
-
-// type PostI = {
-//   name: string;
-//   maker: string;
-//   tags: Array<string>;
-// }
-
-
-// [fix] JSON fix
-
 interface CatalogueState {
   value: number
 }
