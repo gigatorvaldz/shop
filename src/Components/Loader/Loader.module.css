@@ -1,0 +1,29 @@
+.loader{
+    border-radius: 50%;
+    border: 5px dashed rgb(216, 195, 255);
+    width: 100px;
+    height: 100px;
+    margin: 30px;
+    padding: 10px;
+    animation: loading 5s ease infinite;
+}
+
+.loaderWrapper{
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes loading {
+    0% {
+        transform: scale(1) rotate(0);
+    }
+    50% {
+        transform: scale(2) rotate(180deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
