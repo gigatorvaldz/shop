@@ -1,0 +1,49 @@
+.input-email {
+  max-width: 80%;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+    max-width: 282px;
+
+    background: #ededed;
+    border-radius: 36px;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      width: 39px;
+      height: 39px;
+      background-image: url("../../../public/img/email-input-icon.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+
+.pricelist-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 21px 43px;
+    gap: 12px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+
+    background: #ffc85e;
+    border-radius: 79px;
+}
