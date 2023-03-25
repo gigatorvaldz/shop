@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import catalogue from "./Reducers/catalogueSlice";
+import shop from "./Reducers/shopSlice";
 export const store = configureStore({
   reducer: {
     catalogue,
+    shop
   },
 });
 

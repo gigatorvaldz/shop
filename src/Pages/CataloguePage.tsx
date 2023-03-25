@@ -1,18 +1,17 @@
 import React from "react";
+import CatalogueList from "../Components/CatalogueList/CatalogueList";
 import { useAppDispatch, useAppSelector } from "../Redux/hooks";
-import { increment } from "../Redux/Reducers/catalogueSlice";
 
 interface CataloguePageProps {}
 
 const CataloguePage = (props: CataloguePageProps) => {
   const dispatch = useAppDispatch();
-  const value = useAppSelector((state) => state.catalogue.value);
+  const posts = useAppSelector(state => state.catalogue.posts)
 
   return (
     <div>
       Catalogue Page
-      {value}
-      <button onClick={() => dispatch(increment())}>Inc</button>
+      <CatalogueList posts={posts}/>
     </div>
   );
 };
