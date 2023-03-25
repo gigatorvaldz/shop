@@ -11,10 +11,9 @@ import "./SCSS/App.scss"
 function App() {
   return (
     <div className="App">
-      {/* <Header/> */}
+      <Header/>
       <CataloguePage/>
-      {/* <Footer/> */}
-
+      <Footer/>
     </div>
   );
 }

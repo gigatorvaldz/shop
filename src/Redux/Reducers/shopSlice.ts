@@ -1,20 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface shopState {
-  cartCount: number;
+  cartTotal: number;
+  priceTotal: number;
 }
 
-const initialState = { cartCount: 0 } as shopState;
+const initialState = { cartTotal: 3, priceTotal: 12478 } as shopState;
 
 const shopSlice = createSlice({
   name: "shop",
   initialState,
   reducers: {
     cartIncrement(state) {
-      state.cartCount++;
+      state.cartTotal++;
     },
     cartDecrement(state) {
-      state.cartCount--;
+      state.cartTotal--;
     },
   },
 });

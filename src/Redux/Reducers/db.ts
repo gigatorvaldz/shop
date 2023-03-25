@@ -2,7 +2,7 @@ import { PostI } from "../../Types/defaultTypes";
 
 export const posts: Array<PostI> = [
   {
-    url: "https://imgur.com/oXg7CYb",
+    imageUrl: "./img/post-1.png",
     name: "AOS средство для мытья посуды Crystal",
     type: "value",
     code: 4604049097548,
@@ -13,8 +13,8 @@ export const posts: Array<PostI> = [
     price: "48,76 ₸",
   },
   {
-    url: "https://imgur.com/oXg7CYb",
-    name: "AOS средство для мытья посуды Crystal",
+    imageUrl: "./img/post-2.png",
+    name: "ARIEL Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
     type: "value",
     code: 4604049097549,
     maker: "Нэфис",
@@ -24,8 +24,8 @@ export const posts: Array<PostI> = [
     price: "48,76 ₸",
   },
   {
-    url: "https://imgur.com/oXg7CYb",
-    name: "AOS средство для мытья посуды Crystal",
+    imageUrl: "./img/post-3.png",
+    name: "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
     type: "value",
     code: 4604049097550,
     maker: "Нэфис",

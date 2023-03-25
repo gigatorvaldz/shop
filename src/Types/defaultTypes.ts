@@ -1,7 +1,7 @@
 export type sizeType = "weight" | "value";
 
 export interface PostI {
-    url: string;
+    imageUrl: string;
     name: string;
     type: sizeType;
     code: number;

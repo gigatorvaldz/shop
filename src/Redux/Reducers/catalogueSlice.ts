@@ -19,7 +19,7 @@ const catlogueSlice = createSlice({
     },
     deletePost(state, action: PayloadAction<number>) {
       let currentPosts = state.posts;
-      currentPosts.filter((post) => post.code != action.payload);
+      currentPosts.filter((post) => post.code !== action.payload);
     },
   },
 });
