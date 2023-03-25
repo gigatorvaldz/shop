@@ -2,10 +2,13 @@
 
 .upper-header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(63, 78, 101, 0.2);
     padding: 13px 0;
+
+    &__wrapper {
+        border-bottom: 1px solid rgba(63, 78, 101, 0.2);
+    }
 
     &__about {
         display: flex;
@@ -15,10 +18,16 @@
         border-left: 1px dashed rgba(63, 78, 101, 0.1);
     }
 
+    &__location {
+        padding-right: 20px;
+    }
+    &__mail {
+        padding-left: 20px;
+    }
+
     .contacts-block {
         display: flex;
         align-items: center;
-        padding: 0 20px;
 
         img {
             width: 20px;
@@ -73,12 +82,15 @@
 
 .lower-header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 5px 0;
-    border-bottom: 1px solid rgba(63, 78, 101, 0.2);
     font-family: "Inter";
     font-style: normal;
+
+    &__wrapper {
+        border-bottom: 1px solid rgba(63, 78, 101, 0.2);
+    }
 
     &__contacts {
         display: flex;
@@ -184,5 +196,12 @@
 
         background: #ffc85e;
         border-radius: 79px;
+
+        &-wrapper {
+            padding: 0 25px;
+            border-left: 1px dashed rgba(63, 78, 101, 0.1);
+            border-right: 1px dashed rgba(63, 78, 101, 0.1);
+            margin: 0 25px;
+        }
     }
 }
