@@ -87,6 +87,7 @@
     padding: 5px 0;
     font-family: "Inter";
     font-style: normal;
+    gap: 5px;
 
     &__wrapper {
         border-bottom: 1px solid rgba(63, 78, 101, 0.2);
@@ -148,38 +149,6 @@
         font-weight: 700;
         font-size: 14px;
         line-height: 17px;
-    }
-
-    &__search-input {
-        max-width: 80%;
-    }
-
-    &__search-input-wrapper {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-        gap: 10px;
-
-        background: #ededed;
-        border-radius: 36px;
-
-        &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            width: 39px;
-            height: 39px;
-            background-image: url("../../../public/img/search-icon.svg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
     }
 
     &__pricelist-button {

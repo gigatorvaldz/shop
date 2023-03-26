@@ -1,6 +1,7 @@
 import React from "react";
 import { useAppSelector } from "../../Redux/hooks";
 import Cart from "../UI/Cart/Cart";
+import SearchInput from "../UI/SearchInput/SearchInput";
 import "./Header.scss";
 
 interface HeaderPropsI {}
@@ -64,12 +65,8 @@ const Header = (props: HeaderPropsI) => {
               Каталог{" "}
               <img src="./img/catalogue-icon.png" alt="catalogue icon" />
             </a>
-            <div className="lower-header__search-input-wrapper">
-              <input
-                className="lower-header__search-input"
-                type="text"
-                placeholder="Поиск..."
-              />
+            <div>
+              <SearchInput/>
             </div>
             <article className="lower-header__contacts">
               <div className="lower-header__contacts-info">
