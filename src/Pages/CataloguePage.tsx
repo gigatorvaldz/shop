@@ -2,7 +2,7 @@ import React from "react";
 import CatalogueList from "../Components/CatalogueList/CatalogueList";
 import { useAppDispatch, useAppSelector } from "../Redux/hooks";
 import { cartIncrement } from "../Redux/Reducers/shopSlice";
-
+import "./SCSS/CataloguePage.scss";
 interface CataloguePageProps {}
 
 const CataloguePage = (props: CataloguePageProps) => {

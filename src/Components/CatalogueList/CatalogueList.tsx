@@ -1,6 +1,7 @@
 import React from 'react'
 import { PostI } from '../../Types/defaultTypes'
 import CatalogueItem from '../CatalogueItem/CatalogueItem'
+import "./CatalogueList.scss"
 
 interface CatalogueListPropsI {
     posts: Array<PostI>
@@ -8,9 +9,9 @@ interface CatalogueListPropsI {
 
 function CatalogueList({posts, ...props}: CatalogueListPropsI) {
   return (
-    <div>
+    <div className="catalogue-list">
         {
-            posts.map( el => <CatalogueItem post={el} />)
+            posts.map( el => <CatalogueItem key={el.code} post={el} />)
         }
     </div>
   )

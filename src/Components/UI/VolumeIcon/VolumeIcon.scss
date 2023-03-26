@@ -1,0 +1,11 @@
+.VolumeIcon {
+    display: flex;
+    & > *:not(:first-child) {
+        margin-left: 8px;
+    }
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    color: #3f4e65;
+}

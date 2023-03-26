@@ -1,0 +1,17 @@
+.cart-button {
+    background: #ffc85e;
+    border-radius: 80px;
+    padding: 9px 25px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.15em;
+    color: #fff;
+}
