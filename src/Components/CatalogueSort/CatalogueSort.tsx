@@ -1,15 +1,17 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../Redux/hooks";
 import {
+  toggleSortedMakers,
   setMakerSearchInput,
   setMaxPriceFilter,
   setMinPriceFilter,
+  toggleCheckedMaker,
   toggleMakerShowMore,
 } from "../../Redux/Reducers/catalogueSlice";
 import CheckboxGroup, { CheckBoxI } from "../UI/CheckboxGroup/CheckboxGroup";
 import SearchInput from "../UI/SearchInput/SearchInput";
 import "./CatalogueSort.scss";
-import { useSortCheckBoxes } from "../../Hooks/hooks";
+import { useSliceCheckBoxes, useSortCheckBoxes } from "../../Hooks/hooks";
 
 type Props = {};
 
@@ -26,11 +28,23 @@ function CatalogueSort({}: Props) {
 
   let sortedMakerSortCheckBoxes = useSortCheckBoxes(
     makerSortCheckBoxes,
-    makerSearchInput,
-    isShowMore
+    makerSearchInput
+  );
+
+  let sortedMakerSortCheckBoxesShowed = useSliceCheckBoxes(
+    sortedMakerSortCheckBoxes,
+    isShowMore,
+    4
   );
 
   const dispatch = useAppDispatch();
+
+  const makerCheckBoxChangeHandler = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    dispatch(toggleCheckedMaker(e.currentTarget.id));
+    dispatch(toggleSortedMakers(e.currentTarget.id));
+  };
 
   return (
     <div className="sort-section">
@@ -82,7 +96,10 @@ function CatalogueSort({}: Props) {
             }
           />
         </div>
-        <CheckboxGroup checkBoxes={sortedMakerSortCheckBoxes} />
+        <CheckboxGroup
+          onChange={makerCheckBoxChangeHandler}
+          checkBoxes={sortedMakerSortCheckBoxesShowed}
+        />
         <button
           onClick={() => dispatch(toggleMakerShowMore())}
           className="sort-section__maker-show-more"

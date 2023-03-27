@@ -16,9 +16,15 @@ const CataloguePage = (props: CataloguePageProps) => {
   const posts = useAppSelector((state) => state.catalogue.posts);
   const dispatch = useAppDispatch();
 
+  const sortedMakers = useAppSelector((state) => state.catalogue.sortedMakers);
   const currentSort = useAppSelector((state) => state.catalogue.sortBy);
   const priceFilter = useAppSelector((state) => state.catalogue.priceFilter);
-  const sortedPosts = useAllSortPosts(posts, currentSort, priceFilter);
+  const sortedPosts = useAllSortPosts(
+    posts,
+    currentSort,
+    priceFilter,
+    sortedMakers
+  );
 
   let selectChangeHandle = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     let value = e.currentTarget.value;

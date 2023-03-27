@@ -9,6 +9,7 @@ interface CatalogueState {
   posts: Array<PostI>;
   makerSortCheckBoxes: Array<CheckBoxI>;
   makerSearchInput: string;
+  sortedMakers: Array<string>;
   sortBy: filterKeys;
   makerShowMore: boolean;
   priceFilter: { min: number, max: number }
@@ -19,41 +20,26 @@ const makerSortCheckBoxes: Array<CheckBoxI> = [
     id: "Grifon",
     label: "Grifon",
     isChecked: false,
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log(event);
-    },
   },
   {
     id: "Boyscout",
     label: "Boyscout",
     isChecked: false,
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log(event);
-    },
   },
   {
     id: "Paclan",
     label: "Paclan",
     isChecked: false,
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log(event);
-    },
   },
   {
     id: "Булгари Грин",
     label: "Булгари Грин",
     isChecked: false,
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log(event);
-    },
   },
   {
     id: "Нэфис",
     label: "Нэфис",
     isChecked: false,
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log(event);
-    },
   },
 ];
 
@@ -63,6 +49,7 @@ const initialState = {
   makerSortCheckBoxes,
   makerSearchInput: "",
   makerShowMore: false,
+  sortedMakers: [],
   sortBy: "name",
   priceFilter: { min: 10, max: 10000 },
 } as CatalogueState;
@@ -93,6 +80,21 @@ const catlogueSlice = createSlice({
     },
     toggleMakerShowMore(state) {
       state.makerShowMore = !state.makerShowMore;
+    },
+    toggleCheckedMaker(state, action: PayloadAction<string>) {
+      let currentCheckBox = state.makerSortCheckBoxes.find(el => el.id === action.payload);
+      if (currentCheckBox) {
+        currentCheckBox.isChecked = !currentCheckBox?.isChecked;
+      }
+    },
+    toggleSortedMakers(state, action: PayloadAction<string>) {
+      if (state.sortedMakers.includes(action.payload)) {
+        state.sortedMakers.splice(state.sortedMakers.findIndex(el => el === action.payload), 1)
+      }
+      else {
+        state.sortedMakers.push(action.payload);
+      }
+
     }
   },
 });
@@ -103,6 +105,8 @@ export const {
   setMaxPriceFilter,
   setMinPriceFilter,
   setMakerSearchInput,
-  toggleMakerShowMore
+  toggleMakerShowMore,
+  toggleCheckedMaker,
+  toggleSortedMakers
 } = catlogueSlice.actions;
 export default catlogueSlice.reducer;

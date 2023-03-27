@@ -7,14 +7,14 @@ export interface CheckBoxI {
   id: string;
   label?: string;
   isChecked?: boolean;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 interface CheckboxGroupPropsI {
   checkBoxes: Array<CheckBoxI> | undefined;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function CheckboxGroup({ checkBoxes }: CheckboxGroupPropsI) {
+function CheckboxGroup({ checkBoxes, onChange}: CheckboxGroupPropsI) {
   if (!checkBoxes) {
     return <div>Нет подходящих результатов.</div>;
   }
@@ -34,7 +34,7 @@ function CheckboxGroup({ checkBoxes }: CheckboxGroupPropsI) {
             name={cb.label}
             type="checkbox"
             value={cb.label}
-            onChange={cb.onChange}
+            onChange={onChange}
           />
           {cb.label && <span className="CheckBox-Label">{cb.label}</span>}
         </span>

@@ -52,24 +52,42 @@ export const useSortPostsByPrice = ({ filter, posts }: sortByPriceProps): Array<
     return sortedPosts;
 }
 
-export const useAllSortPosts = (posts: Array<PostI>, sortFilter: filterKeys, priceFilter: { min: number, max: number }) => {
+export const useSortPostsByMaker = (posts: Array<PostI>, makers: Array<string>) => {
+    const sortedPosts = useMemo(() => {
+        if (makers.length > 0) {
+            return posts.filter(el => makers.indexOf(el.maker) > -1);
+        }
+        return posts;
+    }, [posts, makers])
+    return sortedPosts;
+}
+
+export const useAllSortPosts = (posts: Array<PostI>, sortFilter: filterKeys, priceFilter: { min: number, max: number }, makers: Array<string>) => {
     let sortingPosts = useSortPosts({ filter: sortFilter, posts })
     sortingPosts = useSortPostsByPrice({ filter: priceFilter, posts: sortingPosts })
+    sortingPosts = useSortPostsByMaker(sortingPosts, makers)
+
     return sortingPosts;
 }
 
-export const useSortCheckBoxes = (checkBoxes: Array<CheckBoxI>, makerSearchInput: string, isShowMore: boolean) => {
+export const useSortCheckBoxes = (checkBoxes: Array<CheckBoxI>, makerSearchInput: string) => {
     const sortedCheckBoxes = useMemo(() => {
         let slicedCheckBoxes = checkBoxes;
-        if (!isShowMore) {
-            slicedCheckBoxes = slicedCheckBoxes.slice(0, 4);
-        }
-
         if (makerSearchInput === "" || makerSearchInput === undefined) {
             return slicedCheckBoxes;
         }
 
         return slicedCheckBoxes.filter(cb => cb.id.includes(makerSearchInput))
-    }, [checkBoxes, makerSearchInput, isShowMore])
+    }, [checkBoxes, makerSearchInput])
+    return sortedCheckBoxes;
+}
+
+export const useSliceCheckBoxes = (checkBoxes: Array<CheckBoxI>, isShowMore: boolean, sliceTo: number) => {
+    const sortedCheckBoxes = useMemo(() => {
+        if (!isShowMore) {
+            return checkBoxes.slice(0, sliceTo)
+        }
+        return checkBoxes
+    }, [checkBoxes, isShowMore])
     return sortedCheckBoxes;
 }
