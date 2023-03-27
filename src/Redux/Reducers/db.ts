@@ -10,7 +10,7 @@ export const posts: Array<PostI> = [
     brand: "AOS",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: "48,76",
+    price: 244,
     tags: ["hands", "body"],
   },
   {
@@ -19,10 +19,10 @@ export const posts: Array<PostI> = [
     type: "weight",
     code: 4604049097549,
     maker: "Нэфис",
-    brand: "AOS",
+    brand: "ARIEL",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: "48,76",
+    price: 144,
     tags: [],
 
   },
@@ -32,10 +32,10 @@ export const posts: Array<PostI> = [
     type: "weight",
     code: 4604049097550,
     maker: "Нэфис",
-    brand: "AOS",
+    brand: "BiMAX",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: "48,76",
+    price: 120,
     tags: ["hands"],
 
   },
@@ -48,7 +48,7 @@ export const posts: Array<PostI> = [
     brand: "AOS",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: "48,76",
+    price: 143,
     tags: ["hands", "body"],
   },
   {
@@ -57,10 +57,10 @@ export const posts: Array<PostI> = [
     type: "weight",
     code: 4604049097552,
     maker: "Нэфис",
-    brand: "AOS",
+    brand: "ARIEL",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: "48,76",
+    price: 33,
     tags: [],
 
   },
@@ -70,10 +70,10 @@ export const posts: Array<PostI> = [
     type: "weight",
     code: 4604049097553,
     maker: "Нэфис",
-    brand: "AOS",
+    brand: "BiMAX",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: "48,76",
+    price: 22,
     tags: ["hands"],
 
   },

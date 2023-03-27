@@ -1,12 +1,15 @@
 import React from "react";
-import "./SearchInput.scss"
+import "./SearchInput.scss";
 
-interface SearchInputPropsI {}
+interface SearchInputPropsI {
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
-function SearchInput({}: SearchInputPropsI) {
+function SearchInput({ onChange }: SearchInputPropsI) {
   return (
     <div className="search-input-wrapper">
       <input
+        onChange={onChange}
         className="search-input"
         type="text"
         placeholder="Поиск..."

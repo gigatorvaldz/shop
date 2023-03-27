@@ -8,6 +8,6 @@ export interface PostI {
   maker: string;
   brand: string;
   description: string;
-  price: string;
+  price: number;
   tags: Array<string>;
 }

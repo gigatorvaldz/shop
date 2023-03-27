@@ -1,0 +1,22 @@
+.CheckBoxGroup {
+    display: flex;
+    flex-direction: column;
+
+    .CheckBox-Inner {
+        display: flex;
+        align-items: center;
+
+        input {
+            border: 0.5px solid #3f4e65;
+            border-radius: 1px;
+        }
+
+        .CheckBox-Label {
+            margin-left: 10px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 150%;
+            color: #3f4e65;
+        }
+    }
+}
