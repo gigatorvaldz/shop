@@ -1,0 +1,190 @@
+@import "../../SCSS/utils.scss";
+.post-page {
+    &__breadcrumbs {
+        display: flex;
+        margin-top: 45px;
+        margin-bottom: 65px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 120%;
+        cursor: pointer;
+
+        &-main {
+            color: #3f4e65;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &-add {
+            color: #3f4e65;
+            opacity: 0.5;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                text-decoration: underline;
+                opacity: 1;
+            }
+        }
+
+        & > *:not(:first-child) {
+            padding-left: 10px;
+            border-left: 1px dashed rgba($color: #3f4e65, $alpha: 0.3);
+        }
+
+        & > *:not(:last-child) {
+            padding-right: 10px;
+        }
+    }
+
+    .info {
+        display: flex;
+
+        &__img {
+            width: 50%;
+        }
+
+        &__description {
+            width: 50%;
+            margin-top: 35px;
+        }
+
+        &__stock {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 130%;
+            color: #1fd85d;
+            margin-bottom: 10px;
+        }
+
+        &__name {
+            font-size: 30px;
+            line-height: 150%;
+            color: #111111;
+            margin-bottom: 10px;
+
+            &-brand {
+                font-weight: 800;
+            }
+
+            &-tag {
+                font-weight: 500;
+            }
+        }
+
+        &__volume {
+            margin-bottom: 25px;
+        }
+
+        &__cart-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 30px;
+
+            &-price {
+                font-weight: 800;
+                font-size: 30px;
+                line-height: 130%;
+                color: #111111;
+            }
+
+            &-quantity {
+                display: flex;
+                gap: 7px;
+                align-items: center;
+                &-btn {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    width: 34px;
+                    height: 23px;
+                    background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+                    border-radius: 1000px;
+                }
+            }
+        }
+
+        &__promo {
+            display: flex;
+            gap: 10px;
+
+            & > * {
+                @extend .dfc;
+                width: max-content;
+                box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.14);
+                border-radius: 10px;
+
+                a {
+                    text-align: center;
+                    color: #3f4e65;
+                    width: max-content;
+                }
+            }
+
+            &-share {
+                padding: 29px;
+            }
+
+            &-delivery {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 150%;
+                padding: 20px 35px;
+                text-align: center;
+
+                .price-tag {
+                    font-weight: 800;
+                }
+            }
+
+            &-price-list {
+                width: max-content;
+            }
+
+            &-price-list-wrapper {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 30px 37px;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 17px;
+            }
+
+            margin-bottom: 35px;
+        }
+
+        &__post-description {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 30px;
+
+            &-key {
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 150%;
+                color: #3f4e65;
+            }
+
+            &-value {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 150%;
+                color: #111111;
+            }
+        }
+
+        &__drop-description {
+            &-title {
+                cursor: pointer;
+                gap: 5px;
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

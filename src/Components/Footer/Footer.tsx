@@ -8,7 +8,7 @@ function Footer() {
         <li>
           <ul className="footer__sublist company-info">
             <li className="company-info__logo">
-              <img src="./img/footer-logo-icon.svg" alt="logo" />
+              <img src="../../img/footer-logo-icon.svg" alt="logo" />
             </li>
             <li className="company-info__description">
               <p>
@@ -77,16 +77,16 @@ function Footer() {
               <h2>Скачать прайс-лист:</h2>
               <button className="pricelist-button">
                 Прайс-лист
-                <img src="./img/download-icon.svg" alt="download icon" />
+                <img src="../../img/download-icon.svg" alt="download icon" />
               </button>
             </li>
             <li className="footer-pricelist__contacts">
               <p>Связь в мессенджерах:</p>
               <a className="footer-pricelist__contacts-wu" href="/#">
-                <img src="./img/wu-icon.svg" alt="social media icon" />
+                <img src="../../img/wu-icon.svg" alt="social media icon" />
               </a>
               <a className="footer-pricelist__contacts-telegram" href="/#">
-                <img src="./img/telegram-icon.svg" alt="social media icon" />
+                <img src="../../img/telegram-icon.svg" alt="social media icon" />
               </a>
             </li>
           </ul>
@@ -125,10 +125,10 @@ function Footer() {
             </li>
             <li>
               <a className="contacts-list__visa" href="/#">
-                <img src="./img/Visa.png" alt="visa icon" />
+                <img src="../../img/Visa.png" alt="visa icon" />
               </a>
               <a className="contacts-list__mastercard" href="/#">
-                <img src="./img/mastercard-icon.png" alt="mastercard icon" />
+                <img src="../../img/mastercard-icon.png" alt="mastercard icon" />
               </a>
             </li>
           </ul>

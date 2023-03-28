@@ -15,15 +15,15 @@ import Breadcrumbs from "./Components/Utils/Breadcrumbs/Breadcrumbs";
 function App() {
   return (
     <div className="App">
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/catalogue" element={<CataloguePage />} />
-          <Route path="/post/:id" element={<PostPage />} />
+          <Route path="catalogue/post/:code" element={<PostPage />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }

@@ -10,7 +10,7 @@ interface VolumeIconProps {
 const VolumeIcon = ({ children, sizeType }: VolumeIconProps) => {
   return (
     <span className="VolumeIcon">
-      <img src={`./img/${sizeType}.svg`} alt={`${sizeType} icon`} />
+      <img src={`../../img/${sizeType}.svg`} alt={`${sizeType} icon`} />
       {children}
     </span>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { PostI } from "../../Types/defaultTypes";
 import CartButton from "../UI/CartButton/CartButton";
 import VolumeIcon from "../UI/VolumeIcon/VolumeIcon";
@@ -18,10 +19,12 @@ function CatalogueItem({ post }: CatalogueItemPropsI) {
           <VolumeIcon sizeType={post.type}>
             <p>450 мл</p>
           </VolumeIcon>
-          <h2 className="post__name">
-            <span className="post__name-brand">{post.brand} </span>
-            {post.name}
-          </h2>
+          <Link className="post__name-link" to={`post/${post.code}`}>
+            <h2 className="post__name">
+              <span className="post__name-brand">{post.brand} </span>
+              {post.name}
+            </h2>
+          </Link>
         </div>
 
         <div className="post__bottom-description">

@@ -10,7 +10,7 @@ export const posts: Array<PostI> = [
     brand: "AOS",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 244,
+    price: 11,
     tags: ["hands"],
   },
   {
@@ -230,7 +230,7 @@ export const posts: Array<PostI> = [
 
   },
   {
-    imageUrl: "./img/post-3.png",
+    imageUrl: "../../../img/post-3.png",
     name: "Порошок стиральный Автомат 100 пятен COMPACT",
     type: "weight",
     code: 4604049097593,
