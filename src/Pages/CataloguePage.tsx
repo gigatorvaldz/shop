@@ -68,6 +68,18 @@ const CataloguePage = (props: CataloguePageProps) => {
     dispatch(setCurrentPage(Number(e.currentTarget.textContent) - 1));
   };
 
+  let onPageListNextClick = () => {
+    if (currentPage + 1 < slicedPages.length) {
+      dispatch(setCurrentPage(currentPage + 1));
+    }
+  };
+
+  let onPageListPrevClick = () => {
+    if (currentPage > 0) {
+      dispatch(setCurrentPage(currentPage - 1));
+    }
+  };
+
   return (
     <main className="catalogue container">
       <div className="catalogue__breadcrumbs">
@@ -134,6 +146,8 @@ const CataloguePage = (props: CataloguePageProps) => {
           <div className="catalogue__page-list">
             <PageList
               onClick={onPageListClick}
+              onNextClick={onPageListNextClick}
+              onPrevClick={onPageListPrevClick}
               pageArray={getPageArray(getPagesCount(sortedPosts.length, 6))}
             />
           </div>

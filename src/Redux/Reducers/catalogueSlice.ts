@@ -65,7 +65,7 @@ const initialState = {
     hands: false,
     body: false,
   },
-  currentPage: 1
+  currentPage: 0
 } as CatalogueState;
 
 const catlogueSlice = createSlice({
@@ -120,7 +120,7 @@ const catlogueSlice = createSlice({
     setSelectedTags(state, action: PayloadAction<selectedTagsT>) {
       state.selectedTags = action.payload;
     },
-    setCurrentPage(state, action: PayloadAction<number>){
+    setCurrentPage(state, action: PayloadAction<number>) {
       state.currentPage = action.payload;
     }
   },
