@@ -58,6 +58,10 @@
             @extend .dfc;
         }
     }
+    &__maker {
+        border-bottom: 1px dashed rgba($color: #3f4e65, $alpha: 0.3);
+        margin-bottom: 20px;
+    }
 
     &__maker-search {
         margin-bottom: 15px;
@@ -72,6 +76,20 @@
         line-height: 150%;
         color: #3f4e65;
         margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+    &__tag {
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        text-transform: uppercase;
+        color: #111111;
+
+        &-active {
+            text-decoration: underline;
+        }
     }
 }
 

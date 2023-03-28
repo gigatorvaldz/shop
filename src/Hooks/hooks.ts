@@ -62,10 +62,34 @@ export const useSortPostsByMaker = (posts: Array<PostI>, makers: Array<string>) 
     return sortedPosts;
 }
 
-export const useAllSortPosts = (posts: Array<PostI>, sortFilter: filterKeys, priceFilter: { min: number, max: number }, makers: Array<string>) => {
+export const useSortPostsByTags = (posts: Array<PostI>, tags: Array<string>) => {
+    const sortedPosts = useMemo(() => {
+
+        if (tags.length > 0) {
+
+            let taggedPosts = posts.filter(post => {
+                let isTagged = false;
+                post.tags.forEach(tag => {
+                    if (tags.indexOf(tag) > -1) {
+                        isTagged = true;
+                        return;
+                    }
+                })
+                return isTagged;
+            })
+
+            return taggedPosts;
+        }
+        return posts;
+    }, [posts, tags])
+    return sortedPosts;
+}
+
+export const useAllSortPosts = (posts: Array<PostI>, sortFilter: filterKeys, priceFilter: { min: number, max: number }, makers: Array<string>, tags: Array<string>) => {
     let sortingPosts = useSortPosts({ filter: sortFilter, posts })
     sortingPosts = useSortPostsByPrice({ filter: priceFilter, posts: sortingPosts })
     sortingPosts = useSortPostsByMaker(sortingPosts, makers)
+    sortingPosts = useSortPostsByTags(sortingPosts, tags)
 
     return sortingPosts;
 }

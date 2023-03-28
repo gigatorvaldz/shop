@@ -7,11 +7,14 @@ import {
   setMinPriceFilter,
   toggleCheckedMaker,
   toggleMakerShowMore,
+  setSelectedTags,
+  toggleSortTags,
 } from "../../Redux/Reducers/catalogueSlice";
 import CheckboxGroup, { CheckBoxI } from "../UI/CheckboxGroup/CheckboxGroup";
 import SearchInput from "../UI/SearchInput/SearchInput";
 import "./CatalogueSort.scss";
 import { useSliceCheckBoxes, useSortCheckBoxes } from "../../Hooks/hooks";
+import classNames from "classnames";
 
 type Props = {};
 
@@ -21,6 +24,7 @@ function CatalogueSort({}: Props) {
     (state) => state.catalogue.makerSortCheckBoxes
   );
   const isShowMore = useAppSelector((state) => state.catalogue.makerShowMore);
+  const selectedTags = useAppSelector((state) => state.catalogue.selectedTags);
 
   const makerSearchInput = useAppSelector(
     (state) => state.catalogue.makerSearchInput
@@ -117,6 +121,38 @@ function CatalogueSort({}: Props) {
           )}
         </button>
       </div>
+      <h2
+        onClick={() => {
+          dispatch(toggleSortTags("body"));
+          dispatch(
+            setSelectedTags({ ...selectedTags, body: !selectedTags.body })
+          );
+        }}
+        className={classNames(
+          {
+            "sort-section__tag-active": selectedTags.body,
+          },
+          "sort-section__tag"
+        )}
+      >
+        Уход за телом
+      </h2>
+      <h2
+        onClick={() => {
+          dispatch(toggleSortTags("hands"));
+          dispatch(
+            setSelectedTags({ ...selectedTags, hands: !selectedTags.hands })
+          );
+        }}
+        className={classNames(
+          {
+            "sort-section__tag-active": selectedTags.hands,
+          },
+          "sort-section__tag"
+        )}
+      >
+        Уход за руками
+      </h2>
     </div>
   );
 }

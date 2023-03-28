@@ -5,6 +5,11 @@ import { posts } from "./db";
 import { filterKeys } from "../../Hooks/hooks";
 import { CheckBoxI } from "../../Components/UI/CheckboxGroup/CheckboxGroup";
 
+export type selectedTagsT = {
+  hands: boolean;
+  body: boolean;
+}
+
 interface CatalogueState {
   posts: Array<PostI>;
   makerSortCheckBoxes: Array<CheckBoxI>;
@@ -12,7 +17,10 @@ interface CatalogueState {
   sortedMakers: Array<string>;
   sortBy: filterKeys;
   makerShowMore: boolean;
-  priceFilter: { min: number, max: number }
+  priceFilter: { min: number, max: number };
+  sortTags: Array<string>;
+  selectedTags: selectedTagsT;
+  currentPage: number;
 }
 
 const makerSortCheckBoxes: Array<CheckBoxI> = [
@@ -52,6 +60,12 @@ const initialState = {
   sortedMakers: [],
   sortBy: "name",
   priceFilter: { min: 10, max: 10000 },
+  sortTags: [],
+  selectedTags: {
+    hands: false,
+    body: false,
+  },
+  currentPage: 1
 } as CatalogueState;
 
 const catlogueSlice = createSlice({
@@ -94,7 +108,20 @@ const catlogueSlice = createSlice({
       else {
         state.sortedMakers.push(action.payload);
       }
-
+    },
+    toggleSortTags(state, action: PayloadAction<string>) {
+      if (state.sortTags.includes(action.payload)) {
+        state.sortTags.splice(state.sortTags.findIndex(el => el === action.payload), 1)
+      }
+      else {
+        state.sortTags.push(action.payload);
+      }
+    },
+    setSelectedTags(state, action: PayloadAction<selectedTagsT>) {
+      state.selectedTags = action.payload;
+    },
+    setCurrentPage(state, action: PayloadAction<number>){
+      state.currentPage = action.payload;
     }
   },
 });
@@ -107,6 +134,9 @@ export const {
   setMakerSearchInput,
   toggleMakerShowMore,
   toggleCheckedMaker,
-  toggleSortedMakers
+  toggleSortedMakers,
+  toggleSortTags,
+  setSelectedTags,
+  setCurrentPage
 } = catlogueSlice.actions;
 export default catlogueSlice.reducer;
