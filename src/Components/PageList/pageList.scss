@@ -1,0 +1,29 @@
+.page-list {
+    display: flex;
+    gap: 23px;
+
+    &__item {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        text-align: center;
+        color: #3f4e65;
+        &-active {
+            position: relative;
+
+            &::after {
+                content: "";
+                z-index: -1;
+                position: absolute;
+                display: block;
+                width: 35px;
+                height: 35px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: #ffeecf;
+                border-radius: 50%;
+            }
+        }
+    }
+}

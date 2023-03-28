@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useAppSelector, useAppDispatch } from "../Redux/hooks";
 import { useSortPosts, filterKeys, useAllSortPosts } from "../Hooks/hooks";
@@ -7,8 +7,20 @@ import "./SCSS/CataloguePage.scss";
 
 import CatalogueList from "../Components/CatalogueList/CatalogueList";
 import Select, { selectOptionType } from "../Components/UI/Select/Select";
-import { setSortBy } from "../Redux/Reducers/catalogueSlice";
+import {
+  setCurrentPage,
+  setSelectedTags,
+  setSortBy,
+  toggleSortTags,
+} from "../Redux/Reducers/catalogueSlice";
 import CatalogueSort from "../Components/CatalogueSort/CatalogueSort";
+import classNames from "classnames";
+import PageList from "../Components/PageList/PageList";
+import {
+  slicePostPages,
+  getPageArray,
+  getPagesCount,
+} from "../Utils/pageUtils";
 
 interface CataloguePageProps {}
 
@@ -16,14 +28,19 @@ const CataloguePage = (props: CataloguePageProps) => {
   const posts = useAppSelector((state) => state.catalogue.posts);
   const dispatch = useAppDispatch();
 
+  const selectedTags = useAppSelector((state) => state.catalogue.selectedTags);
+
   const sortedMakers = useAppSelector((state) => state.catalogue.sortedMakers);
   const currentSort = useAppSelector((state) => state.catalogue.sortBy);
   const priceFilter = useAppSelector((state) => state.catalogue.priceFilter);
+  const sortTags = useAppSelector((state) => state.catalogue.sortTags);
+  const currentPage = useAppSelector((state) => state.catalogue.currentPage);
   const sortedPosts = useAllSortPosts(
     posts,
     currentSort,
     priceFilter,
-    sortedMakers
+    sortedMakers,
+    sortTags
   );
 
   let selectChangeHandle = (e: React.ChangeEvent<HTMLSelectElement>): void => {
@@ -42,6 +59,14 @@ const CataloguePage = (props: CataloguePageProps) => {
     { name: "Название", value: "name" },
     { name: "Цена", value: "price" },
   ];
+
+  let slicedPages = slicePostPages(sortedPosts, 6);
+
+  if (!slicedPages[currentPage]) dispatch(setCurrentPage(0));
+  let currentPosts = slicedPages[currentPage];
+  let onPageListClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    dispatch(setCurrentPage(Number(e.currentTarget.textContent) - 1));
+  };
 
   return (
     <main className="catalogue container">
@@ -63,13 +88,55 @@ const CataloguePage = (props: CataloguePageProps) => {
         </div>
       </div>
       <ul className="catalogue__lower-header">
-        <li className="catalogue__lower-header-item">Уход за телом</li>
-        <li className="catalogue__lower-header-item">Уход за руками</li>
+        <li
+          className={classNames(
+            {
+              "catalogue__lower-header-item-active": selectedTags.body,
+            },
+            "catalogue__lower-header-item"
+          )}
+        >
+          <button
+            onClick={() => {
+              dispatch(toggleSortTags("body"));
+              dispatch(
+                setSelectedTags({ ...selectedTags, body: !selectedTags.body })
+              );
+            }}
+          >
+            Уход за телом
+          </button>
+        </li>
+        <li
+          className={classNames(
+            {
+              "catalogue__lower-header-item-active": selectedTags.hands,
+            },
+            "catalogue__lower-header-item"
+          )}
+        >
+          <button
+            onClick={() => {
+              dispatch(toggleSortTags("hands"));
+              dispatch(
+                setSelectedTags({ ...selectedTags, hands: !selectedTags.hands })
+              );
+            }}
+          >
+            Уход за руками
+          </button>
+        </li>
       </ul>
       <div className="catalogue__main-section">
         <CatalogueSort />
         <div className="catalogue__posts">
-          <CatalogueList posts={sortedPosts} />
+          <CatalogueList posts={currentPosts} />
+          <div className="catalogue__page-list">
+            <PageList
+              onClick={onPageListClick}
+              pageArray={getPageArray(getPagesCount(sortedPosts.length, 6))}
+            />
+          </div>
         </div>
       </div>
     </main>
