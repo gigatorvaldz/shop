@@ -4,8 +4,6 @@ import Cart from "../UI/Cart/Cart";
 import SearchInput from "../UI/SearchInput/SearchInput";
 import "./Header.scss";
 
-import "../../img/location-icon.svg"
-
 interface HeaderPropsI {}
 
 const Header = (props: HeaderPropsI) => {
@@ -19,7 +17,7 @@ const Header = (props: HeaderPropsI) => {
           <div className="header__upper-header upper-header">
             <div className="upper-header__about">
               <div className="upper-header__location contacts-block">
-                <img src="../../img/location-icon.svg" alt="location icon" />
+                <img src="../../../img/location-icon.svg" alt="location icon" />
                 <div className="contacts-block__info">
                   <strong className="contacts-block__info-main">
                     г. Кокчетав, ул. Ж. Ташенова 129Б{" "}
@@ -30,7 +28,7 @@ const Header = (props: HeaderPropsI) => {
                 </div>
               </div>
               <div className="upper-header__mail contacts-block">
-                <img src="../../img/mail-icon.svg" alt="mail icon" />
+                <img src="../../../img/mail-icon.svg" alt="mail icon" />
                 <div className="contacts-block__info">
                   <a
                     className="contacts-block__info-main"
@@ -61,11 +59,11 @@ const Header = (props: HeaderPropsI) => {
         <div className="container">
           <div className="header__lower-header lower-header">
             <a href="#">
-              <img src="../../img/header-logo.svg" alt="logo" />
+              <img src="../../../img/header-logo.svg" alt="logo" />
             </a>
             <a href="#" className="lower-header__catalogue-button">
               Каталог{" "}
-              <img src="../../img/catalogue-icon.png" alt="catalogue icon" />
+              <img src="../../../img/catalogue-icon.png" alt="catalogue icon" />
             </a>
             <div>
               <SearchInput/>
