@@ -1,0 +1,15 @@
+.quantity {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    &-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 34px;
+        height: 23px;
+        background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+        border-radius: 1000px;
+    }
+}

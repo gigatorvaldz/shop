@@ -184,6 +184,54 @@
                 display: flex;
                 align-items: center;
                 margin-bottom: 15px;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 150%;
+                color: #111111;
+            }
+
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 150%;
+            color: #3f4e65;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+
+            border-bottom: 1px dashed rgba($color: #3f4e65, $alpha: 0.3);
+        }
+
+        &__drop-characteristic {
+            &-title {
+                cursor: pointer;
+                gap: 5px;
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 150%;
+                color: #111111;
+            }
+
+            &-key {
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 150%;
+                color: #3f4e65;
+            }
+
+            &-value {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 150%;
+                color: #111111;
+            }
+
+            &-list{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                margin-bottom: 60px;
             }
         }
     }

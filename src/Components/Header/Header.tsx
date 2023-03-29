@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useAppSelector } from "../../Redux/hooks";
 import Cart from "../UI/Cart/Cart";
 import SearchInput from "../UI/SearchInput/SearchInput";
@@ -61,12 +62,12 @@ const Header = (props: HeaderPropsI) => {
             <a href="#">
               <img src="../../../img/header-logo.svg" alt="logo" />
             </a>
-            <a href="#" className="lower-header__catalogue-button">
+            <Link to={"/catalogue"} className="lower-header__catalogue-button">
               Каталог{" "}
               <img src="../../../img/catalogue-icon.png" alt="catalogue icon" />
-            </a>
+            </Link>
             <div>
-              <SearchInput/>
+              <SearchInput />
             </div>
             <article className="lower-header__contacts">
               <div className="lower-header__contacts-info">
@@ -95,7 +96,9 @@ const Header = (props: HeaderPropsI) => {
                 <img src="../../img/download-icon.svg" alt="download icon" />
               </button>
             </div>
-            <Cart total={cartTotal} price={priceTotal} />
+            <Link to="/cart">
+              <Cart total={cartTotal} price={priceTotal} />
+            </Link>
           </div>
         </div>
       </div>

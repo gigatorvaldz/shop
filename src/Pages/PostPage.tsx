@@ -5,6 +5,7 @@ import VolumeIcon from "../Components/UI/VolumeIcon/VolumeIcon";
 import { useAppSelector } from "../Redux/hooks";
 import "./SCSS/PostPage.scss";
 import classNames from "classnames";
+import QuantityInput from "../Components/UI/QuantityInput/QuantityInput";
 
 type Props = {};
 
@@ -14,6 +15,7 @@ function PostPage({}: Props) {
   const post = posts.find((el) => el.code === Number(code));
 
   const [isDescriptionShow, setIsDescriptionShow] = useState(true);
+  const [isCharacteristicShow, setIsCharacteristicShow] = useState(true);
 
   if (!post) {
     return <div>No such post</div>;
@@ -49,11 +51,7 @@ function PostPage({}: Props) {
           </div>
           <div className="info__cart-section">
             <h2 className="info__cart-section-price">48,76 ₸</h2>
-            <div className="info__cart-section-quantity">
-              <button className="info__cart-section-quantity-btn">-</button>
-              <p>1</p>
-              <button className="info__cart-section-quantity-btn">+</button>
-            </div>
+            <QuantityInput />
 
             <CartButton />
           </div>
@@ -122,6 +120,83 @@ function PostPage({}: Props) {
                 congue mauris venenatis. Nunc elit, dignissim sed nulla
                 ullamcorper enim, malesuada.
               </p>
+            )}
+          </div>
+          <div className="info__drop-characteristic">
+            <h2
+              className="info__drop-characteristic-title"
+              onClick={() => setIsCharacteristicShow(!isCharacteristicShow)}
+            >
+              Характеристики
+              <img
+                className={classNames({
+                  rotate180: isCharacteristicShow,
+                })}
+                src="../../img/ui-triangle.svg"
+                alt=""
+              />
+            </h2>
+            {isCharacteristicShow && (
+              <div className="info__drop-characteristic-list">
+                <div className="info__drop-characteristic-item">
+                  <span className="info__drop-characteristic-key">
+                    Назначение: {""}
+                  </span>
+                  <span className="info__drop-characteristic-value">
+                    BioMio
+                  </span>
+                </div>
+                <div className="info__drop-characteristic-item">
+                  <span className="info__drop-characteristic-key">Тип: </span>
+                  <span className="info__drop-characteristic-value">
+                    BioMio {""}
+                  </span>
+                </div>
+                <div className="info__drop-characteristic-item">
+                  <span className="info__drop-characteristic-key">
+                    Производитель: {""}
+                  </span>
+                  <span className="info__drop-characteristic-value">
+                    {post.maker}
+                  </span>
+                </div>
+                <div className="info__drop-characteristic-item">
+                  <span className="info__drop-characteristic-key">Бренд: </span>
+                  <span className="info__drop-characteristic-value">
+                    {post.brand}
+                  </span>
+                </div>
+                <div className="info__drop-characteristic-item">
+                  <span className="info__drop-characteristic-key">
+                    Артикул:{" "}
+                  </span>
+                  <span className="info__drop-characteristic-value">
+                    {post.code}
+                  </span>
+                </div>
+                <div className="info__drop-characteristic-item">
+                  <span className="info__drop-characteristic-key">
+                    Штрихкод:{" "}
+                  </span>
+                  <span className="info__drop-characteristic-value">
+                    {post.code}
+                  </span>
+                </div>
+                <div className="info__drop-characteristic-item">
+                  <span className="info__drop-characteristic-key">Вес: </span>
+                  <span className="info__drop-characteristic-value">90 г</span>
+                </div>
+                <div className="info__drop-characteristic-item">
+                  <span className="info__drop-characteristic-key">Объем: </span>
+                  <span className="info__drop-characteristic-value">90 г</span>
+                </div>
+                <div className="info__drop-characteristic-item">
+                  <span className="info__drop-characteristic-key">
+                    Кол-во в коробке:{" "}
+                  </span>
+                  <span className="info__drop-characteristic-value">90 г</span>
+                </div>
+              </div>
             )}
           </div>
         </div>

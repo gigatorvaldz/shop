@@ -7,6 +7,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ErrorPage from "./Pages/ErrorPage";
 import PostPage from "./Pages/PostPage";
 import Breadcrumbs from "./Components/Utils/Breadcrumbs/Breadcrumbs";
+import CartPage from "./Pages/CartPage";
 
 // [Notes]:
 
@@ -19,6 +20,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/catalogue" element={<CataloguePage />} />
+          <Route path="/cart" element={<CartPage />} />
           <Route path="catalogue/post/:code" element={<PostPage />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
