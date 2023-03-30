@@ -2,20 +2,51 @@ import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import CartButton from "../Components/UI/CartButton/CartButton";
 import VolumeIcon from "../Components/UI/VolumeIcon/VolumeIcon";
-import { useAppSelector } from "../Redux/hooks";
+import { useAppSelector, useAppDispatch } from "../Redux/hooks";
 import "./SCSS/PostPage.scss";
 import classNames from "classnames";
 import QuantityInput from "../Components/UI/QuantityInput/QuantityInput";
+import { addToCart } from "../Redux/Reducers/catalogueSlice";
 
 type Props = {};
 
 function PostPage({}: Props) {
   const { code } = useParams();
   const posts = useAppSelector((state) => state.catalogue.posts);
+  // const postPageCounter = useAppSelector((state) => state.shop.postPageCounter);
+  const [postPageCounter, setPostPageCounter] = useState(0);
   const post = posts.find((el) => el.code === Number(code));
+
+  const dispatch = useAppDispatch();
 
   const [isDescriptionShow, setIsDescriptionShow] = useState(true);
   const [isCharacteristicShow, setIsCharacteristicShow] = useState(true);
+
+  let postPageDecrement = () => {
+    if (postPageCounter > 0) {
+      setPostPageCounter(postPageCounter - 1);
+    }
+  };
+
+  let postPageIncrement = () => {
+    setPostPageCounter(postPageCounter + 1);
+  };
+
+  const currentCart = useAppSelector((state) => state.catalogue.currentCart);
+  let cartPost;
+  let counter = 1;
+  if (post !== undefined) {
+    cartPost = currentCart.find((el) => el.code === post.code);
+    if (cartPost !== undefined) {
+      counter = cartPost.quantity;
+    }
+  }
+
+  let cartButtonClickHandler = (e: React.MouseEvent) => {
+    if (post && postPageCounter > 0) {
+      dispatch(addToCart({ code: post.code, quantity: postPageCounter }));
+    }
+  };
 
   if (!post) {
     return <div>No such post</div>;
@@ -51,9 +82,13 @@ function PostPage({}: Props) {
           </div>
           <div className="info__cart-section">
             <h2 className="info__cart-section-price">48,76 ₸</h2>
-            <QuantityInput />
+            <QuantityInput
+              increment={postPageIncrement}
+              decrement={postPageDecrement}
+              counter={postPageCounter}
+            />
 
-            <CartButton />
+            <CartButton onClick={cartButtonClickHandler} />
           </div>
           <div className="info__promo">
             <div className="info__promo-share">

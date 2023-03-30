@@ -4,11 +4,21 @@ import { PostI } from "../../Types/defaultTypes";
 import CartButton from "../UI/CartButton/CartButton";
 import VolumeIcon from "../UI/VolumeIcon/VolumeIcon";
 import "./CatalogueItem.scss";
+import { useAppDispatch } from "../../Redux/hooks";
+import { addToCart } from "../../Redux/Reducers/catalogueSlice";
 interface CatalogueItemPropsI {
   post: PostI;
 }
 
 function CatalogueItem({ post }: CatalogueItemPropsI) {
+  const dispatch = useAppDispatch();
+
+  let onCartButtonClickHandler = () => {
+    if (post) {
+      dispatch(addToCart({ code: post.code, quantity: 1 }));
+    }
+  };
+
   return (
     <div className="post">
       <div className="post__img-wrapper">
@@ -45,7 +55,7 @@ function CatalogueItem({ post }: CatalogueItemPropsI) {
 
           <div className="post__buy-section">
             <span className="post__price">{post.price} ₸</span>
-            <CartButton />
+            <CartButton onClick={onCartButtonClickHandler} />
           </div>
         </div>
       </div>

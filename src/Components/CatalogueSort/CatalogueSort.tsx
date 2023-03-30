@@ -10,7 +10,7 @@ import {
   setSelectedTags,
   toggleSortTags,
 } from "../../Redux/Reducers/catalogueSlice";
-import CheckboxGroup, { CheckBoxI } from "../UI/CheckboxGroup/CheckboxGroup";
+import CheckboxGroup from "../UI/CheckboxGroup/CheckboxGroup";
 import SearchInput from "../UI/SearchInput/SearchInput";
 import "./CatalogueSort.scss";
 import { useSliceCheckBoxes, useSortCheckBoxes } from "../../Hooks/hooks";

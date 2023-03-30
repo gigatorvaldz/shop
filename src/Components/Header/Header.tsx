@@ -8,8 +8,21 @@ import "./Header.scss";
 interface HeaderPropsI {}
 
 const Header = (props: HeaderPropsI) => {
-  const cartTotal = useAppSelector((state) => state.shop.cartTotal);
-  const priceTotal = useAppSelector((state) => state.shop.priceTotal);
+  const currentCart = useAppSelector((state) => state.catalogue.currentCart);
+  const cartPosts = useAppSelector((state) => state.catalogue.cartPosts);
+
+  let totalPrice = 0;
+
+  currentCart.forEach((el) => {
+    let res;
+    if (cartPosts !== undefined && el !== undefined) {
+      res = cartPosts.find((post) => post.code === el.code);
+      if (res !== undefined) {
+        res = res.price;
+        totalPrice += res * el.quantity;
+      }
+    }
+  });
 
   return (
     <div className="header">
@@ -97,7 +110,7 @@ const Header = (props: HeaderPropsI) => {
               </button>
             </div>
             <Link to="/cart">
-              <Cart total={cartTotal} price={priceTotal} />
+              <Cart total={currentCart.length} price={totalPrice} />
             </Link>
           </div>
         </div>

@@ -1,18 +1,18 @@
 import React from "react";
 import { useAppSelector } from "../../Redux/hooks";
 import CartItem from "../CartItem/CartItem";
-import "./CartList.scss"
+import "./CartList.scss";
 
 type Props = {};
 
 function CartList({}: Props) {
-  const posts = useAppSelector((state) => state.catalogue.posts);
+  const posts = useAppSelector((state) => state.catalogue.cartPosts);
 
   return (
     <div className="cart-list">
-      <CartItem post={posts[0]} />
-      <CartItem post={posts[1]} />
-      <CartItem post={posts[2]} />
+      {posts.map((post) => (
+        <CartItem key={post.code} post={post} />
+      ))}
     </div>
   );
 }

@@ -11,3 +11,8 @@ export interface PostI {
   price: number;
   tags: Array<string>;
 }
+export interface cartItemI {
+  code: number;
+  quantity: number;
+}
+

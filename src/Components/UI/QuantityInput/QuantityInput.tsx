@@ -1,14 +1,22 @@
 import React from "react";
 import "./QuantityInput.scss";
 
-type Props = {};
+interface quantityInputI {
+  decrement: (e: React.MouseEvent) => void;
+  increment: (e: React.MouseEvent) => void;
+  counter?: number;
+}
 
-function QuantityInput({}: Props) {
+function QuantityInput({ decrement, increment, counter = 1 }: quantityInputI) {
   return (
     <div className="quantity">
-      <button className="quantity-btn">-</button>
-      <p>1</p>
-      <button className="quantity-btn">+</button>
+      <button onClick={decrement} className="quantity-btn">
+        -
+      </button>
+      <p>{counter}</p>
+      <button onClick={increment} className="quantity-btn">
+        +
+      </button>
     </div>
   );
 }

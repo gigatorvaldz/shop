@@ -10,7 +10,7 @@ export const posts: Array<PostI> = [
     brand: "AOS",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 11,
+    price: 10,
     tags: ["hands"],
   },
   {
@@ -22,7 +22,7 @@ export const posts: Array<PostI> = [
     brand: "ARIEL",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 144,
+    price: 15,
     tags: [],
 
   },
@@ -35,7 +35,7 @@ export const posts: Array<PostI> = [
     brand: "BiMAX",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 120,
+    price: 20,
     tags: ["hands"],
 
   },

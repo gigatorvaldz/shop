@@ -1,14 +1,28 @@
 import React from "react";
+import {
+  incrementCartItemQuantity,
+  removeFromCart,
+  decrementCartItemQuantity,
+} from "../../Redux/Reducers/catalogueSlice";
 import { PostI } from "../../Types/defaultTypes";
 import QuantityInput from "../UI/QuantityInput/QuantityInput";
 import VolumeIcon from "../UI/VolumeIcon/VolumeIcon";
 import "./CartItem.scss";
+import { useAppDispatch, useAppSelector } from "../../Redux/hooks";
 
 interface CartItemI {
   post: PostI;
 }
 
 function CartItem({ post }: CartItemI) {
+  const dispatch = useAppDispatch();
+  const currentCart = useAppSelector((state) => state.catalogue.currentCart);
+
+  let cartPost = currentCart.find((el) => el.code === post.code);
+  let counter = cartPost?.quantity;
+
+  if (!counter) counter = 1;
+
   return (
     <div className="cart-item">
       <div className="cart-item__img">
@@ -31,11 +45,18 @@ function CartItem({ post }: CartItemI) {
       </div>
       <div className="cart-item__cart-info">
         <div className="cart-item__quantity">
-          <QuantityInput />
+          <QuantityInput
+            increment={() => dispatch(incrementCartItemQuantity(post.code))}
+            decrement={() => dispatch(decrementCartItemQuantity(post.code))}
+            counter={counter}
+          />
         </div>
-        <h2 className="cart-item__price">{post.price + "₸"}</h2>
+        <h2 className="cart-item__price">{post.price * counter + "₸"}</h2>
         <div className="cart-item__button-wrapper">
-          <button className="cart-item__button">
+          <button
+            className="cart-item__button"
+            onClick={() => dispatch(removeFromCart(post.code))}
+          >
             <img
               width={60}
               height={60}

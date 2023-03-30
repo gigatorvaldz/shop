@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { PostI } from "../../Types/defaultTypes";
+import { cartItemI, PostI } from "../../Types/defaultTypes";
 import { posts } from "./db";
 import { filterKeys } from "../../Hooks/hooks";
 import { CheckBoxI } from "../../Components/UI/CheckboxGroup/CheckboxGroup";
@@ -9,7 +9,6 @@ export type selectedTagsT = {
   hands: boolean;
   body: boolean;
 }
-
 interface CatalogueState {
   posts: Array<PostI>;
   makerSortCheckBoxes: Array<CheckBoxI>;
@@ -21,6 +20,8 @@ interface CatalogueState {
   sortTags: Array<string>;
   selectedTags: selectedTagsT;
   currentPage: number;
+  currentCart: Array<cartItemI>;
+  cartPosts: Array<PostI>
 }
 
 const makerSortCheckBoxes: Array<CheckBoxI> = [
@@ -65,7 +66,9 @@ const initialState = {
     hands: false,
     body: false,
   },
-  currentPage: 0
+  currentPage: 0,
+  currentCart: [],
+  cartPosts: []
 } as CatalogueState;
 
 const catlogueSlice = createSlice({
@@ -122,6 +125,40 @@ const catlogueSlice = createSlice({
     },
     setCurrentPage(state, action: PayloadAction<number>) {
       state.currentPage = action.payload;
+    },
+    addToCart(state, action: PayloadAction<cartItemI>) {
+      if (state.cartPosts.find(el => el.code === action.payload.code)) {
+        state.currentCart[state.currentCart.findIndex(el => el.code === action.payload.code)].quantity = action.payload.quantity;
+        return;
+      }
+
+      let post = state.posts.find(el => el.code == action.payload.code);
+      if (post !== undefined) {
+        state.cartPosts.push(post);
+        state.currentCart.push({ code: post.code, quantity: action.payload.quantity });
+      }
+    },
+    removeFromCart(state, action: PayloadAction<number>) {
+      state.cartPosts = state.cartPosts.filter(el => el.code !== action.payload)
+      state.currentCart = state.currentCart.filter(el => el.code !== action.payload)
+    },
+    setCartItemQuantity(state, action: PayloadAction<cartItemI>) {
+      let post = state.currentCart.find(el => el.code == action.payload.code);
+      if (post !== undefined) {
+        post.quantity = action.payload.quantity;
+      }
+    },
+    incrementCartItemQuantity(state, action: PayloadAction<number>) {
+      let post = state.currentCart.find(el => el.code == action.payload);
+      if (post !== undefined) {
+        post.quantity++;
+      }
+    },
+    decrementCartItemQuantity(state, action: PayloadAction<number>) {
+      let post = state.currentCart.find(el => el.code == action.payload);
+      if (post !== undefined) {
+        if (post.quantity > 1) post.quantity--;
+      }
     }
   },
 });
@@ -137,6 +174,11 @@ export const {
   toggleSortedMakers,
   toggleSortTags,
   setSelectedTags,
-  setCurrentPage
+  setCurrentPage,
+  addToCart,
+  removeFromCart,
+  setCartItemQuantity,
+  incrementCartItemQuantity,
+  decrementCartItemQuantity
 } = catlogueSlice.actions;
 export default catlogueSlice.reducer;
