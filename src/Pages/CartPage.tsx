@@ -23,7 +23,7 @@ function CartPage({}: Props) {
       </div>
 
       <div className="cart-page__controls">
-        <div className="cart-page__controls-submit">Оформить заказ</div>
+        <button className="cart-page__controls-submit">Оформить заказ</button>
         <div className="cart-page__controls-total-price">1 348,76 ₸</div>
       </div>
     </div>
