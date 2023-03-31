@@ -81,7 +81,7 @@ function PostPage({}: Props) {
             </VolumeIcon>
           </div>
           <div className="info__cart-section">
-            <h2 className="info__cart-section-price">48,76 ₸</h2>
+            <h2 className="info__cart-section-price">{post.price} ₸</h2>
             <QuantityInput
               increment={postPageIncrement}
               decrement={postPageDecrement}
@@ -116,7 +116,7 @@ function PostPage({}: Props) {
           </div>
           <div className="info__post-description">
             <div>
-              <span className="info__post-description-key">Производитель:</span>
+              <span className="info__post-description-key">Производитель: </span>
               <span className="info__post-description-value">{post.maker}</span>
             </div>
             <div>

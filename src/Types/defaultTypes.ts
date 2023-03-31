@@ -11,6 +11,9 @@ export interface PostI {
   price: number;
   tags: Array<string>;
 }
+
+export type readableKeysPostI = "maker";
+
 export interface cartItemI {
   code: number;
   quantity: number;

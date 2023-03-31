@@ -10,9 +10,11 @@ function CartList({}: Props) {
 
   return (
     <div className="cart-list">
-      {posts.map((post) => (
-        <CartItem key={post.code} post={post} />
-      ))}
+      {posts.length > 0 ? (
+        posts.map((post) => <CartItem key={post.code} post={post} />)
+      ) : (
+        <h1 className="empty-message">Корзина пуста.</h1>
+      )}
     </div>
   );
 }

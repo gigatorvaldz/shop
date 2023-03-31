@@ -140,7 +140,7 @@ const CataloguePage = (props: CataloguePageProps) => {
         </li>
       </ul>
       <div className="catalogue__main-section">
-        <CatalogueSort />
+        <CatalogueSort/>
         <div className="catalogue__posts">
           <CatalogueList posts={currentPosts} />
           <div className="catalogue__page-list">

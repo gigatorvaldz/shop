@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../Redux/hooks";
 import {
   toggleSortedMakers,
@@ -15,6 +15,7 @@ import SearchInput from "../UI/SearchInput/SearchInput";
 import "./CatalogueSort.scss";
 import { useSliceCheckBoxes, useSortCheckBoxes } from "../../Hooks/hooks";
 import classNames from "classnames";
+import { PostI } from "../../Types/defaultTypes";
 
 type Props = {};
 
@@ -29,7 +30,6 @@ function CatalogueSort({}: Props) {
   const makerSearchInput = useAppSelector(
     (state) => state.catalogue.makerSearchInput
   );
-
   let sortedMakerSortCheckBoxes = useSortCheckBoxes(
     makerSortCheckBoxes,
     makerSearchInput

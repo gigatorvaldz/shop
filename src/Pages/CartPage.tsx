@@ -1,12 +1,15 @@
 import React from "react";
 import CartList from "../Components/CartList/CartList";
 import "./SCSS/CartPage.scss";
-import { useAppSelector } from "../Redux/hooks";
+import { useAppSelector, useAppDispatch } from "../Redux/hooks";
+import { resetCart } from "../Redux/Reducers/catalogueSlice";
 type Props = {};
 
 function CartPage({}: Props) {
   const currentCart = useAppSelector((state) => state.catalogue.currentCart);
   const cartPosts = useAppSelector((state) => state.catalogue.cartPosts);
+
+  const dispatch = useAppDispatch();
 
   let totalPrice = 0;
 
@@ -20,6 +23,15 @@ function CartPage({}: Props) {
       }
     }
   });
+
+  let onSubmiteHandle = () => {
+    if (cartPosts.length > 0) {
+      dispatch(resetCart());
+      alert("Заказ оформлены.");
+    } else {
+      alert("Корзина пуста.");
+    }
+  };
 
   return (
     <div className="cart-page container">
@@ -40,7 +52,12 @@ function CartPage({}: Props) {
       </div>
 
       <div className="cart-page__controls">
-        <button className="cart-page__controls-submit">Оформить заказ</button>
+        <button
+          className="cart-page__controls-submit"
+          onClick={onSubmiteHandle}
+        >
+          Оформить заказ
+        </button>
         <div className="cart-page__controls-total-price">{totalPrice} ₸</div>
       </div>
     </div>

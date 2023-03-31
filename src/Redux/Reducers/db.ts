@@ -10,7 +10,7 @@ export const posts: Array<PostI> = [
     brand: "AOS",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 10,
+    price: 5,
     tags: ["hands"],
   },
   {

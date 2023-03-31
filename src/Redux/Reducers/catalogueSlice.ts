@@ -52,7 +52,6 @@ const makerSortCheckBoxes: Array<CheckBoxI> = [
   },
 ];
 
-
 const initialState = {
   posts,
   makerSortCheckBoxes,
@@ -60,7 +59,14 @@ const initialState = {
   makerShowMore: false,
   sortedMakers: [],
   sortBy: "name",
-  priceFilter: { min: 10, max: 10000 },
+  priceFilter: {
+    min: posts.reduce((acc, curr) =>
+      acc.price < curr.price ? acc : curr
+    ).price,
+    max: posts.reduce((acc, curr) =>
+      acc.price > curr.price ? acc : curr
+    ).price
+  },
   sortTags: [],
   selectedTags: {
     hands: false,
@@ -159,6 +165,10 @@ const catlogueSlice = createSlice({
       if (post !== undefined) {
         if (post.quantity > 1) post.quantity--;
       }
+    },
+    resetCart(state) {
+      state.cartPosts = [];
+      state.currentCart = [];
     }
   },
 });
@@ -179,6 +189,7 @@ export const {
   removeFromCart,
   setCartItemQuantity,
   incrementCartItemQuantity,
-  decrementCartItemQuantity
+  decrementCartItemQuantity,
+  resetCart
 } = catlogueSlice.actions;
 export default catlogueSlice.reducer;

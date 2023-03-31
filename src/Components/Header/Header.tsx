@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../../Redux/hooks";
 import Cart from "../UI/Cart/Cart";
 import SearchInput from "../UI/SearchInput/SearchInput";
 import "./Header.scss";
+import classNames from "classnames";
 
 interface HeaderPropsI {}
 
 const Header = (props: HeaderPropsI) => {
   const currentCart = useAppSelector((state) => state.catalogue.currentCart);
   const cartPosts = useAppSelector((state) => state.catalogue.cartPosts);
+
+  const [isBurgerActive, setIsBurgerActive] = useState(false);
 
   let totalPrice = 0;
 
@@ -112,6 +115,123 @@ const Header = (props: HeaderPropsI) => {
             <Link to="/cart">
               <Cart total={currentCart.length} price={totalPrice} />
             </Link>
+          </div>
+        </div>
+      </div>
+      <div className="mobile-header">
+        <div className="mobile-header__upper mobile-up">
+          <button
+            onClick={() => setIsBurgerActive(!isBurgerActive)}
+            className="mobile-up__burger burger"
+          >
+            <span className="burger__content"></span>
+          </button>
+          <img src="../../../img/header-logo.svg" alt="logo" />
+          <Link to="/cart">
+            <Cart total={currentCart.length} price={totalPrice} />
+          </Link>
+        </div>
+        <div className="mobile-header__add mobile-add">
+          <Link className="mobile-add__catalogue-btn" to="/catalogue">
+            <img
+              src="../../../img/catalogue-mobile-icon.svg"
+              alt="catalogue icon"
+            />
+            <p>Каталог</p>
+          </Link>
+          <Link className="mobile-add__search-btn" to="/catalogue">
+            <img
+              src="../../../img/search-mobile-icon.svg"
+              alt="catalogue icon"
+            />
+            <p>Поиск</p>
+          </Link>
+        </div>
+        <div
+          className={classNames(
+            {
+              "burger-menu": isBurgerActive,
+              "burger-menu__non-active": !isBurgerActive,
+            },
+            "mobile-header__burger-menu"
+          )}
+        >
+          <div className="burger-menu__upper">
+            <ul className="burger-menu__contacts-list">
+              <li className="burger-menu__contacts-list-item">
+                <img src="../../../img/location-icon.svg" alt="location icon" />
+                <div className="burger-menu__contacts-list-info">
+                  <p className="burger-menu__contacts-list-info-key">
+                    г. Кокчетав, ул. Ж. Ташенова 129Б
+                  </p>
+                  <p className="burger-menu__contacts-list-info-value">
+                    (Рынок Восточный)
+                  </p>
+                </div>
+              </li>
+              <li className="burger-menu__contacts-list-item">
+                <img src="../../../img/mail-icon.svg" alt="mail icon" />
+                <div className="burger-menu__contacts-list-info">
+                  <a
+                    className="burger-menu__contacts-list-info-key"
+                    href="mailto:opt.sultan@mail.ru"
+                  >
+                    opt.sultan@mail.ru
+                  </a>
+                  <p className="burger-menu__contacts-list-info-value">
+                    На связи в любое время
+                  </p>
+                </div>
+              </li>
+              <li className="burger-menu__contacts-list-item">
+                <img src="../../../img/phone-icon.svg" alt="phone icon" />
+                <div className="burger-menu__contacts-list-info">
+                  <p className="burger-menu__contacts-list-info-key">
+                    Отдел продаж
+                  </p>
+                  <a
+                    className="burger-menu__contacts-list-info-value"
+                    href="tel:+7(777)490-00-91"
+                  >
+                    +7 (777) 490-00-91
+                  </a>
+                  <p className="burger-menu__contacts-list-info-value">
+                    время работы: 9:00-20:00
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div className="burger-menu__phone-info">
+                  <a href="#">
+                    <div className="burger-menu__phone-btn">
+                      <img
+                        src="../../../img/phone-btn-icon.svg"
+                        alt="phone icon"
+                      />
+                    </div>
+                  </a>
+                  <p>Заказать звонок</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className="burger-menu__lower">
+            <h2>Меню сайта:</h2>
+            <ul>
+              <li>О компании</li>
+              <li>Доставка и оплата</li>
+              <li>Возврат</li>
+              <li>Контакты</li>
+            </ul>
+            <button className="burger-menu__pricelist-button">
+              Прайс-лист
+              <img src="../../img/download-icon.svg" alt="download icon" />
+            </button>
+            <div
+              className={classNames({
+                "burger-menu__active-bg": isBurgerActive,
+              })}
+            ></div>
           </div>
         </div>
       </div>
