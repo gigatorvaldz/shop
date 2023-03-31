@@ -177,6 +177,10 @@
   }
 }
 
+.input-email {
+  color: #000;
+}
+
 .footer-mobile {
   display: none;
 }
@@ -194,6 +198,7 @@
     &__logo-block {
       display: flex;
       justify-content: space-between;
+      gap: 10px;
       margin-bottom: 15px;
     }
 
@@ -225,7 +230,20 @@
     &__contacts-block {
       margin-top: 25px;
       display: flex;
+      gap: 10px;
       justify-content: space-between;
+    }
+
+    &__contacts-title {
+      margin-bottom: 25px;
+    }
+
+    &__contacts-upper-block {
+      margin-bottom: 25px;
+    }
+
+    &__contacts-lower-block {
+      margin-bottom: 10px;
     }
   }
 
@@ -269,11 +287,41 @@
     line-height: 150%;
   }
 
-  .contacts-list__contacts-link {
+  #call-link-mobile {
     font-weight: 400;
     font-size: 10px;
     line-height: 150%;
     text-decoration-line: underline;
     color: #ffffff;
+  }
+
+  #contacts-list__contacts-email-mobile {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    color: #fff;
+  }
+
+  #contacts-list__contacts-phone-mobile {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    color: #ffffff;
+  }
+
+  .mobile-payment {
+    display: flex;
+    gap: 5px;
+  }
+
+  .mobile-socials {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .pricelist-button {
+      padding: 11px 23px;
   }
 }

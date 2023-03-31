@@ -209,11 +209,12 @@ function Footer() {
           <div className="footer-mobile__contacts-block">
             <ul className="contacts-list">
               <li>
-                <h2>Контакты:</h2>
+                <h2 className="footer-mobile__contacts-title">Контакты:</h2>
               </li>
-              <li className="contacts-links__item">
+              <li className="contacts-links__item footer-mobile__contacts-upper-block">
                 <a
                   className="contacts-list__contacts-phone"
+                  id="contacts-list__contacts-phone-mobile"
                   href="tel:+7 (777) 490-00-91"
                 >
                   +7 (777) 490-00-91
@@ -224,14 +225,15 @@ function Footer() {
                 <a
                   className="contacts-list__contacts-link"
                   href="/#"
-                  id="call-link"
+                  id="call-link-mobile"
                 >
                   Заказать звонок
                 </a>
               </li>
-              <li className="contacts-links__item">
+              <li className="contacts-links__item footer-mobile__contacts-lower-block">
                 <a
                   className="contacts-list__contacts-email"
+                  id="contacts-list__contacts-email-mobile"
                   href="mailto:opt.sultan@mail.ru"
                 >
                   opt.sultan@mail.ru
@@ -240,7 +242,7 @@ function Footer() {
                   На связи в любое время
                 </p>
               </li>
-              <li>
+              <li className="mobile-payment">
                 <a className="contacts-list__visa" href="/#">
                   <img src="../../img/Visa.png" alt="visa icon" />
                 </a>
@@ -254,15 +256,17 @@ function Footer() {
             </ul>
             <div>
               <p>Связь в мессенджерах:</p>
-              <a className="footer-pricelist__contacts-wu" href="/#">
-                <img src="../../img/wu-icon.svg" alt="social media icon" />
-              </a>
-              <a className="footer-pricelist__contacts-telegram" href="/#">
-                <img
-                  src="../../img/telegram-icon.svg"
-                  alt="social media icon"
-                />
-              </a>
+              <div className="mobile-socials">
+                <a className="footer-pricelist__contacts-wu" href="/#">
+                  <img src="../../img/wu-icon.svg" alt="social media icon" />
+                </a>
+                <a className="footer-pricelist__contacts-telegram" href="/#">
+                  <img
+                    src="../../img/telegram-icon.svg"
+                    alt="social media icon"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -138,7 +138,7 @@ const catlogueSlice = createSlice({
         return;
       }
 
-      let post = state.posts.find(el => el.code == action.payload.code);
+      let post = state.posts.find(el => el.code === action.payload.code);
       if (post !== undefined) {
         state.cartPosts.push(post);
         state.currentCart.push({ code: post.code, quantity: action.payload.quantity });
@@ -149,19 +149,19 @@ const catlogueSlice = createSlice({
       state.currentCart = state.currentCart.filter(el => el.code !== action.payload)
     },
     setCartItemQuantity(state, action: PayloadAction<cartItemI>) {
-      let post = state.currentCart.find(el => el.code == action.payload.code);
+      let post = state.currentCart.find(el => el.code === action.payload.code);
       if (post !== undefined) {
         post.quantity = action.payload.quantity;
       }
     },
     incrementCartItemQuantity(state, action: PayloadAction<number>) {
-      let post = state.currentCart.find(el => el.code == action.payload);
+      let post = state.currentCart.find(el => el.code === action.payload);
       if (post !== undefined) {
         post.quantity++;
       }
     },
     decrementCartItemQuantity(state, action: PayloadAction<number>) {
-      let post = state.currentCart.find(el => el.code == action.payload);
+      let post = state.currentCart.find(el => el.code === action.payload);
       if (post !== undefined) {
         if (post.quantity > 1) post.quantity--;
       }

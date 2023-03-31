@@ -97,7 +97,7 @@ function PostPage({}: Props) {
               </a>
             </div>
             <div className="info__promo-delivery">
-              <p>
+              <p className="info__promo-delivery-text">
                 При покупке от <span className="price-tag">10 000 ₸</span>{" "}
                 бесплатная доставка по Кокчетаву и области
               </p>
@@ -116,7 +116,9 @@ function PostPage({}: Props) {
           </div>
           <div className="info__post-description">
             <div>
-              <span className="info__post-description-key">Производитель: </span>
+              <span className="info__post-description-key">
+                Производитель:{" "}
+              </span>
               <span className="info__post-description-value">{post.maker}</span>
             </div>
             <div>

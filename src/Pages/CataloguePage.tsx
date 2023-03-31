@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { useAppSelector, useAppDispatch } from "../Redux/hooks";
-import { useSortPosts, filterKeys, useAllSortPosts } from "../Hooks/hooks";
+import { filterKeys, useAllSortPosts } from "../Hooks/hooks";
 
 import "./SCSS/CataloguePage.scss";
 
@@ -60,7 +60,7 @@ const CataloguePage = (props: CataloguePageProps) => {
     { name: "Цена", value: "price" },
   ];
 
-  let slicedPages = slicePostPages(sortedPosts, 6);
+  let slicedPages = slicePostPages(sortedPosts, 15);
 
   if (!slicedPages[currentPage]) dispatch(setCurrentPage(0));
   let currentPosts = slicedPages[currentPage];
@@ -140,7 +140,7 @@ const CataloguePage = (props: CataloguePageProps) => {
         </li>
       </ul>
       <div className="catalogue__main-section">
-        <CatalogueSort/>
+        <CatalogueSort />
         <div className="catalogue__posts">
           <CatalogueList posts={currentPosts} />
           <div className="catalogue__page-list">
@@ -148,7 +148,7 @@ const CataloguePage = (props: CataloguePageProps) => {
               onClick={onPageListClick}
               onNextClick={onPageListNextClick}
               onPrevClick={onPageListPrevClick}
-              pageArray={getPageArray(getPagesCount(sortedPosts.length, 6))}
+              pageArray={getPageArray(getPagesCount(sortedPosts.length, 15))}
             />
           </div>
         </div>

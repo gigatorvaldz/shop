@@ -27,7 +27,7 @@ function CartPage({}: Props) {
   let onSubmiteHandle = () => {
     if (cartPosts.length > 0) {
       dispatch(resetCart());
-      alert("Заказ оформлены.");
+      alert("Спасибо за заказ.");
     } else {
       alert("Корзина пуста.");
     }

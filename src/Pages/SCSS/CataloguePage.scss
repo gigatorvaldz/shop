@@ -87,3 +87,18 @@
         margin-bottom: 68px;
     }
 }
+
+
+@media screen and (max-width: 1100px) {
+    .catalogue{
+        &__main-section{
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__posts{
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}

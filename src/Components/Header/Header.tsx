@@ -128,7 +128,7 @@ const Header = (props: HeaderPropsI) => {
           </button>
           <img src="../../../img/header-logo.svg" alt="logo" />
           <Link to="/cart">
-            <Cart total={currentCart.length} price={totalPrice} />
+            <Cart total={currentCart.length} price={-1} />
           </Link>
         </div>
         <div className="mobile-header__add mobile-add">
