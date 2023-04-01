@@ -10,7 +10,9 @@ function createEnum<T extends { [P in keyof T]: P }>(o: T) {
 const filterKeysEnum = createEnum({
     name: 'name',
     code: 'code',
-    price: 'price'
+    price: 'price',
+    reverseName: 'reverseName',
+    reversePrice: 'reversePrice'
 });
 
 export type filterKeys = keyof (typeof filterKeysEnum);
@@ -28,11 +30,16 @@ type sortByPriceProps = {
 export const useSortPosts = ({ filter, posts }: sortProps): Array<PostI> => {
     const sortedPosts = useMemo(() => {
         if (filter === "name") {
-
-            return [...posts].sort((a, b) => b[filter].toString().localeCompare(a[filter].toString()))
+            return [...posts].sort((a, b) => a[filter].toString().localeCompare(b[filter].toString()))
         }
         else if (filter === "code" || filter === "price") {
             return [...posts].sort((a, b) => Number(a[filter]) - Number(b[filter]))
+        }
+        else if (filter === "reverseName") {
+            return [...posts].sort((a, b) => b["name"].toString().localeCompare(a["name"].toString()))
+        }
+        else if (filter === "reversePrice") {
+            return [...posts].sort((a, b) => Number(b["price"]) - Number(a["price"]))
         }
         else {
 

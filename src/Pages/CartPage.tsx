@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CartList from "../Components/CartList/CartList";
 import "./SCSS/CartPage.scss";
 import { useAppSelector, useAppDispatch } from "../Redux/hooks";
@@ -8,21 +8,25 @@ type Props = {};
 function CartPage({}: Props) {
   const currentCart = useAppSelector((state) => state.catalogue.currentCart);
   const cartPosts = useAppSelector((state) => state.catalogue.cartPosts);
-
+  const posts = useAppSelector(state => state.catalogue.posts)
   const dispatch = useAppDispatch();
 
   let totalPrice = 0;
+  
 
-  currentCart.forEach((el) => {
-    let res;
-    if (cartPosts !== undefined && el !== undefined) {
-      res = cartPosts.find((post) => post.code === el.code);
-      if (res !== undefined) {
-        res = res.price;
-        totalPrice += res * el.quantity;
+  useEffect(() => {
+
+    currentCart.forEach((el) => {
+      let res;
+      if (cartPosts !== undefined && el !== undefined) {
+        res = cartPosts.find((post) => post.code === el.code);
+        if (res !== undefined) {
+          res = res.price;
+          totalPrice += res * el.quantity;
+        }
       }
-    }
-  });
+    });
+  }, [currentCart, cartPosts, posts]);
 
   let onSubmiteHandle = () => {
     if (cartPosts.length > 0) {

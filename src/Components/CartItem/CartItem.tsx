@@ -9,6 +9,7 @@ import QuantityInput from "../UI/QuantityInput/QuantityInput";
 import VolumeIcon from "../UI/VolumeIcon/VolumeIcon";
 import "./CartItem.scss";
 import { useAppDispatch, useAppSelector } from "../../Redux/hooks";
+import { Link } from "react-router-dom";
 
 interface CartItemI {
   post: PostI;
@@ -32,9 +33,13 @@ function CartItem({ post }: CartItemI) {
         <VolumeIcon sizeType={post.type}>
           <p>450 мл</p>
         </VolumeIcon>
-        <h2 className="cart-item__title">
-          {post.brand} {post.name}
-        </h2>
+
+        <Link to={`/catalogue/post/${post.code}`}>
+          <h2 className="cart-item__title">
+            {post.brand} {post.name}
+          </h2>
+        </Link>
+
         <div className="cart-item__post-description">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam

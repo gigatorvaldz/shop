@@ -8,6 +8,8 @@ import ErrorPage from "./Pages/ErrorPage";
 import PostPage from "./Pages/PostPage";
 import Breadcrumbs from "./Components/Utils/Breadcrumbs/Breadcrumbs";
 import CartPage from "./Pages/CartPage";
+import PostEditPage from './Pages/PostEditPage';
+import CreatePostPage from "./Pages/CreatePostPage";
 
 // [Notes]:
 
@@ -22,6 +24,8 @@ function App() {
           <Route path="/catalogue" element={<CataloguePage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="catalogue/post/:code" element={<PostPage />} />
+          <Route path="catalogue/post-edit/:code" element={<PostEditPage />} />
+          <Route path="catalogue/post-create" element={<CreatePostPage />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
         <Footer />

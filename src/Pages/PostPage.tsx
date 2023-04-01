@@ -6,7 +6,11 @@ import { useAppSelector, useAppDispatch } from "../Redux/hooks";
 import "./SCSS/PostPage.scss";
 import classNames from "classnames";
 import QuantityInput from "../Components/UI/QuantityInput/QuantityInput";
-import { addToCart } from "../Redux/Reducers/catalogueSlice";
+import {
+  addToCart,
+  deletePost,
+  updatePriceFilter,
+} from "../Redux/Reducers/catalogueSlice";
 
 type Props = {};
 
@@ -89,6 +93,21 @@ function PostPage({}: Props) {
             />
 
             <CartButton onClick={cartButtonClickHandler} />
+          </div>
+          <div className="edit-button__wrapper">
+            <Link to={`/catalogue/post-edit/${code}`} className="edit-button">
+              Редактировать
+            </Link>
+            <Link
+              to="/catalogue"
+              onClick={() => {
+                dispatch(deletePost(post.code));
+                dispatch(updatePriceFilter());
+              }}
+              className="edit-button"
+            >
+              Удалить
+            </Link>
           </div>
           <div className="info__promo">
             <div className="info__promo-share">

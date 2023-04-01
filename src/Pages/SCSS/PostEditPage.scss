@@ -1,0 +1,14 @@
+.post-editor{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    &__input{
+        padding: 5px 15px;
+        background: #dedede;
+        border-radius: 50px;
+    }
+}

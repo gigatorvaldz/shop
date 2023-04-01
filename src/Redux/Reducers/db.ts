@@ -73,7 +73,7 @@ export const posts: Array<PostI> = [
     brand: "BiMAX",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 22,
+    price: 222222,
     tags: [],
 
   },
@@ -82,11 +82,11 @@ export const posts: Array<PostI> = [
     name: "средство для мытья посуды Crystal",
     type: "volume",
     code: 4604049097566,
-    maker: "Нэфис",
+    maker: "Булгари Грин",
     brand: "AOS",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 244,
+    price: 24466,
     tags: ["hands"],
   },
   {
@@ -107,7 +107,7 @@ export const posts: Array<PostI> = [
     name: "Порошок стиральный Автомат 100 пятен COMPACT",
     type: "weight",
     code: 4604049097568,
-    maker: "Нэфис",
+    maker: "Производитель 1",
     brand: "BiMAX",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
@@ -124,7 +124,7 @@ export const posts: Array<PostI> = [
     brand: "AOS",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 143,
+    price: 1433444,
     tags: ["body"],
   },
   {
@@ -138,6 +138,19 @@ export const posts: Array<PostI> = [
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
     price: 33,
     tags: ["body"],
+
+  },
+  {
+    imageUrl: "./img/post-2.png",
+    name: "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
+    type: "weight",
+    code: 4604049093333,
+    maker: "Paclan",
+    brand: "ARIEL",
+    description:
+      "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
+    price: 333,
+    tags: [],
 
   },
   {

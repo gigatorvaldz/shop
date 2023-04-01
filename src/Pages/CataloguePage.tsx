@@ -21,11 +21,13 @@ import {
   getPageArray,
   getPagesCount,
 } from "../Utils/pageUtils";
+import { Link } from "react-router-dom";
 
 interface CataloguePageProps {}
 
 const CataloguePage = (props: CataloguePageProps) => {
-  const posts = useAppSelector((state) => state.catalogue.posts);
+  let posts = useAppSelector((state) => state.catalogue.posts);
+
   const dispatch = useAppDispatch();
 
   const selectedTags = useAppSelector((state) => state.catalogue.selectedTags);
@@ -58,6 +60,8 @@ const CataloguePage = (props: CataloguePageProps) => {
   const options: Array<selectOptionType> = [
     { name: "Название", value: "name" },
     { name: "Цена", value: "price" },
+    { name: "Цена (убывание)", value: "reversePrice" },
+    { name: "Название (убывание)", value: "reverseName" },
   ];
 
   let slicedPages = slicePostPages(sortedPosts, 15);
@@ -152,6 +156,11 @@ const CataloguePage = (props: CataloguePageProps) => {
             />
           </div>
         </div>
+      </div>
+      <div className="catalogue__create-button-wrapper">
+        <Link to="post-create" className="catalogue__create-button">
+          Создать Пост
+        </Link>
       </div>
     </main>
   );

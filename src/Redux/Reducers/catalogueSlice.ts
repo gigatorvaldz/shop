@@ -31,11 +31,6 @@ const makerSortCheckBoxes: Array<CheckBoxI> = [
     isChecked: false,
   },
   {
-    id: "Boyscout",
-    label: "Boyscout",
-    isChecked: false,
-  },
-  {
     id: "Paclan",
     label: "Paclan",
     isChecked: false,
@@ -86,8 +81,9 @@ const catlogueSlice = createSlice({
       state.posts = [...currentPosts, action.payload];
     },
     deletePost(state, action: PayloadAction<number>) {
-      let currentPosts = state.posts;
-      currentPosts.filter((post) => post.code !== action.payload);
+      state.posts = state.posts.filter((post) => post.code !== action.payload);
+      state.currentCart = state.currentCart.filter(el => el.code != action.payload)
+      state.cartPosts = state.cartPosts.filter(el => el.code != action.payload)
     },
     setSortBy(state, action: PayloadAction<filterKeys>) {
       state.sortBy = action.payload;
@@ -169,7 +165,99 @@ const catlogueSlice = createSlice({
     resetCart(state) {
       state.cartPosts = [];
       state.currentCart = [];
-    }
+    },
+    setPostName(state, action: PayloadAction<{ code: number, value: string }>) {
+      let post = state.posts.find((el) => el.code === Number(action.payload.code));
+
+      if (post !== undefined) {
+        post.name = action.payload.value
+      }
+    },
+    setPostMaker(state, action: PayloadAction<{ code: number, value: string }>) {
+      let post = state.posts.find((el) => el.code === Number(action.payload.code));
+
+      if (post !== undefined) {
+        post.maker = action.payload.value
+      }
+    },
+    setPostPrice(state, action: PayloadAction<{ code: number, value: number }>) {
+      let post = state.posts.find((el) => el.code === Number(action.payload.code));
+
+      if (post !== undefined) {
+        post.price = action.payload.value
+      }
+
+      let cartPost = state.cartPosts.find(el => el.code === action.payload.code)
+      if (cartPost) {
+        cartPost.price = action.payload.value
+      }
+    },
+    setPostTags(state, action: PayloadAction<{ code: number, value: string[] }>) {
+      let post = state.posts.find((el) => el.code === Number(action.payload.code));
+
+      if (post !== undefined) {
+        post.tags = action.payload.value
+      }
+    },
+    setPostDescription(state, action: PayloadAction<{ code: number, value: string }>) {
+      let post = state.posts.find((el) => el.code === Number(action.payload.code));
+
+      if (post !== undefined) {
+        post.description = action.payload.value
+      }
+    },
+    setPostBrand(state, action: PayloadAction<{ code: number, value: string }>) {
+      let post = state.posts.find((el) => el.code === Number(action.payload.code));
+
+      if (post !== undefined) {
+        post.brand = action.payload.value
+      }
+    },
+    updatePriceFilter(state) {
+      state.priceFilter = {
+        min: state.posts.reduce((acc, curr) =>
+          acc.price < curr.price ? acc : curr
+        ).price,
+        max: state.posts.reduce((acc, curr) =>
+          acc.price > curr.price ? acc : curr
+        ).price
+      }
+    },
+    addMakerSortCheckBoxes(state, action: PayloadAction<CheckBoxI>) {
+      if (!state.makerSortCheckBoxes.includes(action.payload)) {
+        state.makerSortCheckBoxes.push(action.payload)
+      }
+    },
+    updateMakerSortCheckBoxes(state) {
+      let res: string[] = [];
+      state.posts.forEach(el => {
+        if (!res.includes(el.maker)) {
+          res.push(el.maker)
+        }
+      })
+
+      let mappedRes: Array<CheckBoxI> = res.map(el => {
+        return {
+          id: el,
+          label: el,
+          isChecked: false
+        }
+      });
+
+      state.makerSortCheckBoxes = mappedRes;
+    },
+    resetFilters(state) {
+      state.sortTags = [];
+      state.priceFilter = {
+        min: posts.reduce((acc, curr) =>
+          acc.price < curr.price ? acc : curr
+        ).price,
+        max: posts.reduce((acc, curr) =>
+          acc.price > curr.price ? acc : curr
+        ).price
+      }
+      state.sortedMakers = [];
+    },
   },
 });
 
@@ -190,6 +278,16 @@ export const {
   setCartItemQuantity,
   incrementCartItemQuantity,
   decrementCartItemQuantity,
-  resetCart
+  resetCart,
+  setPostName,
+  setPostBrand,
+  setPostDescription,
+  setPostMaker,
+  setPostPrice,
+  setPostTags,
+  updatePriceFilter,
+  addMakerSortCheckBoxes,
+  updateMakerSortCheckBoxes,
+  resetFilters
 } = catlogueSlice.actions;
 export default catlogueSlice.reducer;

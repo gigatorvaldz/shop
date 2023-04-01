@@ -9,13 +9,14 @@ import {
   toggleMakerShowMore,
   setSelectedTags,
   toggleSortTags,
+  updateMakerSortCheckBoxes,
+  updatePriceFilter,
 } from "../../Redux/Reducers/catalogueSlice";
 import CheckboxGroup from "../UI/CheckboxGroup/CheckboxGroup";
 import SearchInput from "../UI/SearchInput/SearchInput";
 import "./CatalogueSort.scss";
 import { useSliceCheckBoxes, useSortCheckBoxes } from "../../Hooks/hooks";
 import classNames from "classnames";
-import { PostI } from "../../Types/defaultTypes";
 
 type Props = {};
 
@@ -49,6 +50,11 @@ function CatalogueSort({}: Props) {
     dispatch(toggleCheckedMaker(e.currentTarget.id));
     dispatch(toggleSortedMakers(e.currentTarget.id));
   };
+
+  useEffect(() => {
+    dispatch(updateMakerSortCheckBoxes());
+    dispatch(updatePriceFilter());
+  }, []);
 
   return (
     <div className="sort-section">
