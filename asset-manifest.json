@@ -1,17 +1,45 @@
 {
   "files": {
     "main.css": "/shop/static/css/main.7bd23732.css",
-    "main.js": "/shop/static/js/main.9270a0cf.js",
+    "main.js": "/shop/static/js/main.e4477421.js",
+    "static/media/card-image.png": "/shop/static/media/card-image.91e634e96c0b93dcbf1c.png",
+    "static/media/post-3.png": "/shop/static/media/post-3.06d368469e8969f45721.png",
+    "static/media/post-2.png": "/shop/static/media/post-2.7428bfa20388da10062a.png",
+    "static/media/post-1.png": "/shop/static/media/post-1.579e8f54639515dca00a.png",
+    "static/media/header-logo copy.svg": "/shop/static/media/header-logo copy.d2dd08a8d7672265c06d.svg",
     "static/media/header-logo.svg": "/shop/static/media/header-logo.d2dd08a8d7672265c06dfb6ab2582ce7.svg",
+    "static/media/footer-logo-icon.svg": "/shop/static/media/footer-logo-icon.f402d340941ef6e6bd12af1cb90a7023.svg",
+    "static/media/wu-icon.svg": "/shop/static/media/wu-icon.a91d93727fda3856d6648129cdb3ced8.svg",
+    "static/media/cart-btn-icon.svg": "/shop/static/media/cart-btn-icon.37c6cfb24c8cc5b80a8d56545c83cf5f.svg",
+    "static/media/cart-icon copy.svg": "/shop/static/media/cart-icon copy.994dac85d8448df9d56b.svg",
     "static/media/cart-icon.svg": "/shop/static/media/cart-icon.994dac85d8448df9d56b.svg",
+    "static/media/delete-icon.svg": "/shop/static/media/delete-icon.c5e86aeda0941d42a78cc2de8de71784.svg",
+    "static/media/share-icon.svg": "/shop/static/media/share-icon.34358b4b0dc722d3d8b44d06de3c89e0.svg",
+    "static/media/mail-icon.svg": "/shop/static/media/mail-icon.6dfcdf94dba579b04aff7cb3729dcf15.svg",
+    "static/media/volume.svg": "/shop/static/media/volume.dd2d04bc34feedc4c0dc.svg",
+    "static/media/weight.svg": "/shop/static/media/weight.89a26bfd270d38d1120c.svg",
+    "static/media/telegram-icon.svg": "/shop/static/media/telegram-icon.bed293e9055638a29b694d60e11f3e8d.svg",
+    "static/media/phone-btn-icon.svg": "/shop/static/media/phone-btn-icon.4dd3f9cbdfd5e5b6a1b3c551139505da.svg",
+    "static/media/phone-icon.svg": "/shop/static/media/phone-icon.e74ed3e8a20e93f90d9ea5afd4f2e047.svg",
+    "static/media/location-icon.svg": "/shop/static/media/location-icon.5bb56c207dc401b3f323d53ec24eb8e5.svg",
+    "static/media/catalogue-mobile-icon.svg": "/shop/static/media/catalogue-mobile-icon.1928cbd9b07950bf3fa58978c02fd5d0.svg",
+    "static/media/search-icon copy.svg": "/shop/static/media/search-icon copy.59786f46599735f3b500.svg",
     "static/media/search-icon.svg": "/shop/static/media/search-icon.59786f46599735f3b500.svg",
     "index.html": "/shop/index.html",
+    "static/media/search-mobile-icon.svg": "/shop/static/media/search-mobile-icon.ae27b3063e1fa019fb33934605e204ac.svg",
+    "static/media/search-icon-2.svg": "/shop/static/media/search-icon-2.52d3dd936f6348b49dc3.svg",
+    "static/media/download-icon-black.svg": "/shop/static/media/download-icon-black.e268e0de6ed4d99fa38da2dde7b7fdad.svg",
+    "static/media/download-icon.svg": "/shop/static/media/download-icon.c20b6dd4d598382fbb2f11af94108143.svg",
+    "static/media/email-input-icon copy.svg": "/shop/static/media/email-input-icon copy.0d986679d5813054ae88.svg",
     "static/media/email-input-icon.svg": "/shop/static/media/email-input-icon.0d986679d5813054ae88.svg",
+    "static/media/Back-pagination.svg": "/shop/static/media/Back-pagination.f4ac09e46eed14aa13bb261588c2f9c8.svg",
+    "static/media/Next-pagination.svg": "/shop/static/media/Next-pagination.bb17486cce4fafb262e81f6d8ce17678.svg",
+    "static/media/ui-triangle.svg": "/shop/static/media/ui-triangle.8425e6d9d89d5ed0daaedf772ef61290.svg",
     "main.7bd23732.css.map": "/shop/static/css/main.7bd23732.css.map",
-    "main.9270a0cf.js.map": "/shop/static/js/main.9270a0cf.js.map"
+    "main.e4477421.js.map": "/shop/static/js/main.e4477421.js.map"
   },
   "entrypoints": [
     "static/css/main.7bd23732.css",
-    "static/js/main.9270a0cf.js"
+    "static/js/main.e4477421.js"
   ]
 }
