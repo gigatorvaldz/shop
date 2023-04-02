@@ -11,6 +11,8 @@ import "./CartItem.scss";
 import { useAppDispatch, useAppSelector } from "../../Redux/hooks";
 import { Link } from "react-router-dom";
 
+import deleteIcon from "../../img/delete-icon.svg"
+
 interface CartItemI {
   post: PostI;
 }
@@ -27,7 +29,7 @@ function CartItem({ post }: CartItemI) {
   return (
     <div className="cart-item">
       <div className="cart-item__img">
-        <img src={post.imageUrl} alt="post image" />
+        <img src={require(`../../img/${post.imageUrl}`)} alt="post image" />
       </div>
       <div className="cart-item__info">
         <VolumeIcon sizeType={post.type}>
@@ -65,7 +67,7 @@ function CartItem({ post }: CartItemI) {
             <img
               width={60}
               height={60}
-              src="./img/delete-icon.svg"
+              src={deleteIcon}
               alt="delete icon"
             />
           </button>

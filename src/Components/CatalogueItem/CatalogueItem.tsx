@@ -22,7 +22,11 @@ function CatalogueItem({ post }: CatalogueItemPropsI) {
   return (
     <div className="post">
       <div className="post__img-wrapper">
-        <img className="post__img" src={post.imageUrl} alt="post image" />
+        <img
+          className="post__img"
+          src={require(`../../img/${post.imageUrl}`)}
+          alt="post image"
+        />
       </div>
       <div className="post__description-section">
         <div className="post__name-section">

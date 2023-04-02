@@ -1,6 +1,13 @@
 import React from "react";
 import "./Footer.scss";
 
+import footerLogo from "../../img/footer-logo-icon.svg";
+import downloadIcon from "../../img/download-icon.svg";
+import wuIcon from "../../img/wu-icon.svg";
+import telegramIcon from "../../img/telegram-icon.svg";
+import visaIcon from "../../img/Visa.png";
+import mastercardIcon from "../../img/mastercard-icon.png";
+
 function Footer() {
   return (
     <div>
@@ -9,7 +16,7 @@ function Footer() {
           <li>
             <ul className="footer__sublist company-info">
               <li className="company-info__logo">
-                <img src="../../img/footer-logo-icon.svg" alt="logo" />
+                <img src={footerLogo} alt="logo" />
               </li>
               <li className="company-info__description">
                 <p>
@@ -78,17 +85,17 @@ function Footer() {
                 <h2>Скачать прайс-лист:</h2>
                 <button className="pricelist-button">
                   Прайс-лист
-                  <img src="../../img/download-icon.svg" alt="download icon" />
+                  <img src={downloadIcon} alt="download icon" />
                 </button>
               </li>
               <li className="footer-pricelist__contacts">
                 <p>Связь в мессенджерах:</p>
                 <a className="footer-pricelist__contacts-wu" href="/#">
-                  <img src="../../img/wu-icon.svg" alt="social media icon" />
+                  <img src={wuIcon} alt="social media icon" />
                 </a>
                 <a className="footer-pricelist__contacts-telegram" href="/#">
                   <img
-                    src="../../img/telegram-icon.svg"
+                    src={telegramIcon}
                     alt="social media icon"
                   />
                 </a>
@@ -131,11 +138,11 @@ function Footer() {
               </li>
               <li>
                 <a className="contacts-list__visa" href="/#">
-                  <img src="../../img/Visa.png" alt="visa icon" />
+                  <img src={visaIcon} alt="visa icon" />
                 </a>
                 <a className="contacts-list__mastercard" href="/#">
                   <img
-                    src="../../img/mastercard-icon.png"
+                    src={mastercardIcon}
                     alt="mastercard icon"
                   />
                 </a>
@@ -146,10 +153,10 @@ function Footer() {
       </div>
       <div className="footer-mobile">
         <div className="footer-mobile__logo-block">
-          <img src="../../img/footer-logo-icon.svg" alt="logo" />
+          <img src={footerLogo} alt="logo" />
           <button className="pricelist-button">
             Прайс-лист
-            <img src="../../img/download-icon.svg" alt="download icon" />
+            <img src={downloadIcon} alt="download icon" />
           </button>
         </div>
         <p className="company-info__description footer-mobile__description-block">
@@ -244,11 +251,11 @@ function Footer() {
               </li>
               <li className="mobile-payment">
                 <a className="contacts-list__visa" href="/#">
-                  <img src="../../img/Visa.png" alt="visa icon" />
+                  <img src={visaIcon} alt="visa icon" />
                 </a>
                 <a className="contacts-list__mastercard" href="/#">
                   <img
-                    src="../../img/mastercard-icon.png"
+                    src={mastercardIcon}
                     alt="mastercard icon"
                   />
                 </a>
@@ -258,11 +265,11 @@ function Footer() {
               <p>Связь в мессенджерах:</p>
               <div className="mobile-socials">
                 <a className="footer-pricelist__contacts-wu" href="/#">
-                  <img src="../../img/wu-icon.svg" alt="social media icon" />
+                  <img src={wuIcon} alt="social media icon" />
                 </a>
                 <a className="footer-pricelist__contacts-telegram" href="/#">
                   <img
-                    src="../../img/telegram-icon.svg"
+                    src={telegramIcon}
                     alt="social media icon"
                   />
                 </a>

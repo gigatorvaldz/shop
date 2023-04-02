@@ -5,6 +5,16 @@ import Cart from "../UI/Cart/Cart";
 import SearchInput from "../UI/SearchInput/SearchInput";
 import "./Header.scss";
 import classNames from "classnames";
+import headerLogoImage from "../../img/header-logo.svg";
+import locationIcon from "../../img/location-icon.svg";
+import mailIcon from "../../img/mail-icon.svg";
+import catalogueIcon from "../../img/catalogue-icon.png";
+import headerContactsIcon from "../../img/header-contacts.png";
+import downloadIcon from "../../img/download-icon.svg";
+import catalogueMobileIcon from "../../img/catalogue-mobile-icon.svg";
+import searchMobileIcon from "../../img/search-mobile-icon.svg";
+import phoneIcon from "../../img/phone-icon.svg"
+import phoneBtnIcon from "../../img/phone-btn-icon.svg"
 
 interface HeaderPropsI {}
 
@@ -34,7 +44,7 @@ const Header = (props: HeaderPropsI) => {
           <div className="header__upper-header upper-header">
             <div className="upper-header__about">
               <div className="upper-header__location contacts-block">
-                <img src="../../../img/location-icon.svg" alt="location icon" />
+                <img src={locationIcon} alt="location icon" />
                 <div className="contacts-block__info">
                   <strong className="contacts-block__info-main">
                     г. Кокчетав, ул. Ж. Ташенова 129Б{" "}
@@ -45,7 +55,7 @@ const Header = (props: HeaderPropsI) => {
                 </div>
               </div>
               <div className="upper-header__mail contacts-block">
-                <img src="../../../img/mail-icon.svg" alt="mail icon" />
+                <img src={mailIcon} alt="mail icon" />
                 <div className="contacts-block__info">
                   <a
                     className="contacts-block__info-main"
@@ -76,11 +86,11 @@ const Header = (props: HeaderPropsI) => {
         <div className="container">
           <div className="header__lower-header lower-header">
             <a href="#">
-              <img src="../../../img/header-logo.svg" alt="logo" />
+              <img src={headerLogoImage} alt="logo" />
             </a>
             <Link to={"/catalogue"} className="lower-header__catalogue-button">
               Каталог{" "}
-              <img src="../../../img/catalogue-icon.png" alt="catalogue icon" />
+              <img src={catalogueIcon} alt="catalogue icon" />
             </Link>
             <div>
               <SearchInput />
@@ -104,12 +114,12 @@ const Header = (props: HeaderPropsI) => {
                   Заказать звонок
                 </a>
               </div>
-              <img src="../../img/header-contacts.png" />
+              <img src={headerContactsIcon} />
             </article>
             <div className="lower-header__pricelist-button-wrapper">
               <button className="lower-header__pricelist-button">
                 Прайс-лист
-                <img src="../../img/download-icon.svg" alt="download icon" />
+                <img src={downloadIcon} alt="download icon" />
               </button>
             </div>
             <Link to="/cart">
@@ -126,7 +136,7 @@ const Header = (props: HeaderPropsI) => {
           >
             <span className="burger__content"></span>
           </button>
-          <img src="../../../img/header-logo.svg" alt="logo" />
+          <img src={headerLogoImage} alt="logo" />
           <Link to="/cart">
             <Cart total={currentCart.length} price={-1} />
           </Link>
@@ -134,14 +144,14 @@ const Header = (props: HeaderPropsI) => {
         <div className="mobile-header__add mobile-add">
           <Link className="mobile-add__catalogue-btn" to="/catalogue">
             <img
-              src="../../../img/catalogue-mobile-icon.svg"
+              src={catalogueMobileIcon}
               alt="catalogue icon"
             />
             <p>Каталог</p>
           </Link>
           <Link className="mobile-add__search-btn" to="/catalogue">
             <img
-              src="../../../img/search-mobile-icon.svg"
+              src={searchMobileIcon}
               alt="catalogue icon"
             />
             <p>Поиск</p>
@@ -159,7 +169,7 @@ const Header = (props: HeaderPropsI) => {
           <div className="burger-menu__upper">
             <ul className="burger-menu__contacts-list">
               <li className="burger-menu__contacts-list-item">
-                <img src="../../../img/location-icon.svg" alt="location icon" />
+                <img src={locationIcon} alt="location icon" />
                 <div className="burger-menu__contacts-list-info">
                   <p className="burger-menu__contacts-list-info-key">
                     г. Кокчетав, ул. Ж. Ташенова 129Б
@@ -170,7 +180,7 @@ const Header = (props: HeaderPropsI) => {
                 </div>
               </li>
               <li className="burger-menu__contacts-list-item">
-                <img src="../../../img/mail-icon.svg" alt="mail icon" />
+                <img src={mailIcon} alt="mail icon" />
                 <div className="burger-menu__contacts-list-info">
                   <a
                     className="burger-menu__contacts-list-info-key"
@@ -184,7 +194,7 @@ const Header = (props: HeaderPropsI) => {
                 </div>
               </li>
               <li className="burger-menu__contacts-list-item">
-                <img src="../../../img/phone-icon.svg" alt="phone icon" />
+                <img src={phoneIcon} alt="phone icon" />
                 <div className="burger-menu__contacts-list-info">
                   <p className="burger-menu__contacts-list-info-key">
                     Отдел продаж
@@ -205,7 +215,7 @@ const Header = (props: HeaderPropsI) => {
                   <a href="#">
                     <div className="burger-menu__phone-btn">
                       <img
-                        src="../../../img/phone-btn-icon.svg"
+                        src={phoneBtnIcon}
                         alt="phone icon"
                       />
                     </div>
@@ -225,7 +235,7 @@ const Header = (props: HeaderPropsI) => {
             </ul>
             <button className="burger-menu__pricelist-button">
               Прайс-лист
-              <img src="../../img/download-icon.svg" alt="download icon" />
+              <img src={downloadIcon} alt="download icon" />
             </button>
             <div
               className={classNames({

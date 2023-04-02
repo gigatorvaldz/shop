@@ -3,6 +3,9 @@ import "./pageList.scss";
 import classNames from "classnames";
 import { useAppSelector } from "../../Redux/hooks";
 
+import backI from "../../img/Back-pagination.svg";
+import nextI from "../../img/Next-pagination.svg";
+
 interface PageListPropsI {
   pageArray: Array<number>;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
@@ -10,13 +13,18 @@ interface PageListPropsI {
   onNextClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-function PageList({ pageArray, onClick, onPrevClick, onNextClick }: PageListPropsI) {
+function PageList({
+  pageArray,
+  onClick,
+  onPrevClick,
+  onNextClick,
+}: PageListPropsI) {
   const currentPage = useAppSelector((state) => state.catalogue.currentPage);
 
   return (
     <div className="page-list">
       <button onClick={onPrevClick} className="page-list__back-arrow">
-        <img src="./img/Back-pagination.svg" alt="back arrow" />
+        <img src={backI} alt="back arrow" />
       </button>
       {pageArray.map((page) => (
         <button
@@ -33,7 +41,7 @@ function PageList({ pageArray, onClick, onPrevClick, onNextClick }: PageListProp
         </button>
       ))}
       <button onClick={onNextClick} className="page-list__next-arrow">
-        <img src="./img/Next-pagination.svg" alt="next arrow" />
+        <img src={nextI} alt="next arrow" />
       </button>
     </div>
   );

@@ -2,7 +2,7 @@ import { PostI } from "../../Types/defaultTypes";
 
 export const posts: Array<PostI> = [
   {
-    imageUrl: "./img/post-1.png",
+    imageUrl: "post-1.png",
     name: "средство для мытья посуды Crystal",
     type: "volume",
     code: 4604049097548,
@@ -14,7 +14,7 @@ export const posts: Array<PostI> = [
     tags: ["hands"],
   },
   {
-    imageUrl: "./img/post-2.png",
+    imageUrl: "post-2.png",
     name: "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
     type: "weight",
     code: 4604049097549,
@@ -27,7 +27,7 @@ export const posts: Array<PostI> = [
 
   },
   {
-    imageUrl: "./img/post-3.png",
+    imageUrl: "post-3.png",
     name: "Порошок стиральный Автомат 100 пятен COMPACT",
     type: "weight",
     code: 4604049097550,
@@ -40,7 +40,7 @@ export const posts: Array<PostI> = [
 
   },
   {
-    imageUrl: "./img/post-1.png",
+    imageUrl: "post-1.png",
     name: "средство для мытья посуды Crystal",
     type: "volume",
     code: 4604049097551,
@@ -52,7 +52,7 @@ export const posts: Array<PostI> = [
     tags: ["body"],
   },
   {
-    imageUrl: "./img/post-2.png",
+    imageUrl: "post-2.png",
     name: "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
     type: "weight",
     code: 4604049097552,
@@ -65,7 +65,7 @@ export const posts: Array<PostI> = [
 
   },
   {
-    imageUrl: "./img/post-3.png",
+    imageUrl: "post-3.png",
     name: "Порошок стиральный Автомат 100 пятен COMPACT",
     type: "weight",
     code: 4604049097553,
@@ -78,7 +78,7 @@ export const posts: Array<PostI> = [
 
   },
   {
-    imageUrl: "./img/post-1.png",
+    imageUrl: "post-1.png",
     name: "средство для мытья посуды Crystal",
     type: "volume",
     code: 4604049097566,
@@ -90,7 +90,7 @@ export const posts: Array<PostI> = [
     tags: ["hands"],
   },
   {
-    imageUrl: "./img/post-2.png",
+    imageUrl: "post-2.png",
     name: "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
     type: "weight",
     code: 4604049097567,
@@ -103,7 +103,7 @@ export const posts: Array<PostI> = [
 
   },
   {
-    imageUrl: "./img/post-3.png",
+    imageUrl: "post-3.png",
     name: "Порошок стиральный Автомат 100 пятен COMPACT",
     type: "weight",
     code: 4604049097568,
@@ -116,7 +116,7 @@ export const posts: Array<PostI> = [
 
   },
   {
-    imageUrl: "./img/post-1.png",
+    imageUrl: "post-1.png",
     name: "средство для мытья посуды Crystal",
     type: "volume",
     code: 4604049097569,
@@ -128,7 +128,7 @@ export const posts: Array<PostI> = [
     tags: ["body"],
   },
   {
-    imageUrl: "./img/post-2.png",
+    imageUrl: "post-2.png",
     name: "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
     type: "weight",
     code: 4604049097570,
@@ -141,7 +141,7 @@ export const posts: Array<PostI> = [
 
   },
   {
-    imageUrl: "./img/post-2.png",
+    imageUrl: "post-2.png",
     name: "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
     type: "weight",
     code: 4604049093333,
@@ -154,7 +154,7 @@ export const posts: Array<PostI> = [
 
   },
   {
-    imageUrl: "./img/post-3.png",
+    imageUrl: "post-3.png",
     name: "Порошок стиральный Автомат 100 пятен COMPACT",
     type: "weight",
     code: 4604049097573,
@@ -167,7 +167,7 @@ export const posts: Array<PostI> = [
 
   },
   {
-    imageUrl: "./img/post-3.png",
+    imageUrl: "post-3.png",
     name: "Порошок стиральный Автомат 100 пятен COMPACT",
     type: "weight",
     code: 4604049097599,
@@ -180,7 +180,7 @@ export const posts: Array<PostI> = [
 
   },
   {
-    imageUrl: "./img/post-1.png",
+    imageUrl: "post-1.png",
     name: "средство для мытья посуды Crystal",
     type: "volume",
     code: 4604049097598,
@@ -192,7 +192,7 @@ export const posts: Array<PostI> = [
     tags: ["hands"],
   },
   {
-    imageUrl: "./img/post-2.png",
+    imageUrl: "post-2.png",
     name: "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
     type: "weight",
     code: 4604049097597,
@@ -205,7 +205,7 @@ export const posts: Array<PostI> = [
 
   },
   {
-    imageUrl: "./img/post-3.png",
+    imageUrl: "post-3.png",
     name: "Порошок стиральный Автомат 100 пятен COMPACT",
     type: "weight",
     code: 4604049097596,
@@ -218,7 +218,7 @@ export const posts: Array<PostI> = [
 
   },
   {
-    imageUrl: "./img/post-1.png",
+    imageUrl: "post-1.png",
     name: "средство для мытья посуды Crystal",
     type: "volume",
     code: 4604049097595,
@@ -230,7 +230,7 @@ export const posts: Array<PostI> = [
     tags: ["body"],
   },
   {
-    imageUrl: "./img/post-2.png",
+    imageUrl: "post-2.png",
     name: "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
     type: "weight",
     code: 4604049097594,
@@ -243,7 +243,7 @@ export const posts: Array<PostI> = [
 
   },
   {
-    imageUrl: "../../../img/post-3.png",
+    imageUrl: "post-3.png",
     name: "Порошок стиральный Автомат 100 пятен COMPACT",
     type: "weight",
     code: 4604049097593,

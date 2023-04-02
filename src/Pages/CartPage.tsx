@@ -8,14 +8,12 @@ type Props = {};
 function CartPage({}: Props) {
   const currentCart = useAppSelector((state) => state.catalogue.currentCart);
   const cartPosts = useAppSelector((state) => state.catalogue.cartPosts);
-  const posts = useAppSelector(state => state.catalogue.posts)
+  const posts = useAppSelector((state) => state.catalogue.posts);
   const dispatch = useAppDispatch();
 
   let totalPrice = 0;
-  
 
-  useEffect(() => {
-
+  let updateCartPrice = () => {
     currentCart.forEach((el) => {
       let res;
       if (cartPosts !== undefined && el !== undefined) {
@@ -26,6 +24,12 @@ function CartPage({}: Props) {
         }
       }
     });
+  };
+
+  updateCartPrice();
+
+  useEffect(() => {
+    updateCartPrice();
   }, [currentCart, cartPosts, posts]);
 
   let onSubmiteHandle = () => {

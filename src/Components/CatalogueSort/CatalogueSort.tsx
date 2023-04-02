@@ -18,6 +18,8 @@ import "./CatalogueSort.scss";
 import { useSliceCheckBoxes, useSortCheckBoxes } from "../../Hooks/hooks";
 import classNames from "classnames";
 
+import uiTriangle from "../../img/ui-triangle.svg"
+
 type Props = {};
 
 function CatalogueSort({}: Props) {
@@ -117,12 +119,12 @@ function CatalogueSort({}: Props) {
           {isShowMore ? (
             <>
               <span>Показать меньше</span>
-              <img className="rotate180" src="./img/ui-triangle.svg" alt="" />
+              <img className="rotate180" src={uiTriangle} alt="" />
             </>
           ) : (
             <>
               <span>Показать все</span>
-              <img src="./img/ui-triangle.svg" alt="" />
+              <img src={uiTriangle} alt="" />
             </>
           )}
         </button>

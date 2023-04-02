@@ -34,7 +34,7 @@ function CreatePostPage({}: Props) {
         tags: tagsInput,
         code: new Date().valueOf(),
         type: "volume",
-        imageUrl: "./img/post-2.png",
+        imageUrl: "post-2.png",
       };
 
       dispatch(createPost(post));

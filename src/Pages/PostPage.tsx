@@ -12,12 +12,16 @@ import {
   updatePriceFilter,
 } from "../Redux/Reducers/catalogueSlice";
 
+import cardImage from "../img/card-image.png"
+import shareIcon from "../img/share-icon.svg"
+import downloadIconBlack from "../img/download-icon-black.svg"
+import uiTriangle from "../img/ui-triangle.svg"
+
 type Props = {};
 
 function PostPage({}: Props) {
   const { code } = useParams();
   const posts = useAppSelector((state) => state.catalogue.posts);
-  // const postPageCounter = useAppSelector((state) => state.shop.postPageCounter);
   const [postPageCounter, setPostPageCounter] = useState(0);
   const post = posts.find((el) => el.code === Number(code));
 
@@ -71,7 +75,7 @@ function PostPage({}: Props) {
       </div>
       <main className="post-page__main-info info">
         <div className="info__img">
-          <img src="../../img/card-image.png" alt="post image" />
+        <img src={cardImage} alt="post image" />
         </div>
         <div className="info__description">
           <span className="info__stock">В наличии</span>
@@ -112,7 +116,7 @@ function PostPage({}: Props) {
           <div className="info__promo">
             <div className="info__promo-share">
               <a href="#">
-                <img src="../../img/share-icon.svg" alt="share icon" />
+                <img src={shareIcon} alt="share icon" />
               </a>
             </div>
             <div className="info__promo-delivery">
@@ -126,7 +130,7 @@ function PostPage({}: Props) {
                 <span>
                   <span>Прайс-лист </span>
                   <img
-                    src="../../img/download-icon-black.svg"
+                    src={downloadIconBlack}
                     alt="download icon"
                   />
                 </span>
@@ -163,7 +167,7 @@ function PostPage({}: Props) {
                 className={classNames({
                   rotate180: isDescriptionShow,
                 })}
-                src="../../img/ui-triangle.svg"
+                src={uiTriangle}
                 alt=""
               />
             </h2>
@@ -188,7 +192,7 @@ function PostPage({}: Props) {
                 className={classNames({
                   rotate180: isCharacteristicShow,
                 })}
-                src="../../img/ui-triangle.svg"
+                src={uiTriangle}
                 alt=""
               />
             </h2>
