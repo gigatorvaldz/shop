@@ -86,7 +86,7 @@ export const posts: Array<PostI> = [
     brand: "AOS",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 24466,
+    price: 2446,
     tags: ["hands"],
   },
   {
@@ -252,6 +252,19 @@ export const posts: Array<PostI> = [
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
     price: 422,
+    tags: [],
+
+  },
+  {
+    imageUrl: "post-3.png",
+    name: "Порошок стиральный Автомат 100 пятен COMPACT",
+    type: "volume",
+    code: 460352532353,
+    maker: "Grifon",
+    brand: "BiMAX",
+    description:
+      "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
+    price: 1422,
     tags: [],
 
   },
