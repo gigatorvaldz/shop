@@ -51,6 +51,15 @@
   line-height: 17px;
 
   background: #ffc85e;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background: #faa700;
+  }
+
+  &:active {
+    background: #9b701a;
+  }
   border-radius: 79px;
 }
 
@@ -322,6 +331,6 @@
 
 @media screen and (max-width: 400px) {
   .pricelist-button {
-      padding: 11px 23px;
+    padding: 11px 23px;
   }
 }

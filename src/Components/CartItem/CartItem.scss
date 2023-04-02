@@ -77,6 +77,15 @@
         width: 60px;
         height: 60px;
         border-radius: 50%;
+        transition: .3s ease-in-out;
+
+        &:hover {
+            background: #faa700;
+        }
+
+        &:active {
+            background: #9b701a;
+        }
 
         img {
             width: 20px;

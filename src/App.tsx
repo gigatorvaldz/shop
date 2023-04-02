@@ -4,9 +4,7 @@ import Footer from "./Components/Footer/Footer";
 import CataloguePage from "./Pages/CataloguePage";
 import "./SCSS/App.scss";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import ErrorPage from "./Pages/ErrorPage";
 import PostPage from "./Pages/PostPage";
-import Breadcrumbs from "./Components/Utils/Breadcrumbs/Breadcrumbs";
 import CartPage from "./Pages/CartPage";
 import PostEditPage from './Pages/PostEditPage';
 import CreatePostPage from "./Pages/CreatePostPage";
@@ -26,7 +24,7 @@ function App() {
           <Route path="catalogue/post/:code" element={<PostPage />} />
           <Route path="catalogue/post-edit/:code" element={<PostEditPage />} />
           <Route path="catalogue/post-create" element={<CreatePostPage />} />
-          <Route path="/*" element={<ErrorPage />} />
+          <Route path="/*" element={<CataloguePage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

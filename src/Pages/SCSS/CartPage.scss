@@ -47,6 +47,15 @@
             line-height: 17px;
             border-radius: 79px;
             padding: 21px 37px;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                background: #faa700;
+            }
+
+            &:active {
+                background: #9b701a;
+            }
         }
 
         &-total-price {
@@ -60,7 +69,7 @@
 }
 
 @media screen and (max-width: 1050px) {
-    .cart-page__controls{
+    .cart-page__controls {
         flex-direction: column-reverse;
         gap: 25px;
     }

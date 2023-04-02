@@ -93,8 +93,17 @@
         width: max-content;
         padding: 15px 25px;
         color: #fff;
+        transition: .3s ease-in-out;
 
-        &-wrapper{
+        &:hover {
+            background: #faa700;
+        }
+
+        &:active {
+            background: #9b701a;
+        }
+
+        &-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -103,7 +112,7 @@
     }
 }
 
-.mobile-only{
+.mobile-only {
     display: none;
 }
 
@@ -120,21 +129,21 @@
         }
     }
 
-    .mobile-sort{
+    .mobile-sort {
         margin-bottom: 22px;
         margin-top: 25px;
     }
 
-    .back-btn{
+    .back-btn {
         margin-bottom: 25px;
         margin-top: 20px;
     }
 
-    .mobile-only{
+    .mobile-only {
         display: block;
     }
 
-    .desktop-only{
+    .desktop-only {
         display: none;
     }
 }

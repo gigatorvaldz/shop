@@ -14,4 +14,13 @@
     line-height: 12px;
     letter-spacing: 0.15em;
     color: #fff;
+    transition: .3s ease-in-out;
+
+    &:hover{
+        background: #faa700;
+    }
+
+    &:active{
+        background: #9b701a;
+    }
 }
