@@ -10,7 +10,7 @@ export const posts: Array<PostI> = [
     brand: "AOS",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 5,
+    price: 155,
     tags: ["hands"],
   },
   {
@@ -22,7 +22,7 @@ export const posts: Array<PostI> = [
     brand: "ARIEL",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 15,
+    price: 215,
     tags: [],
 
   },
@@ -60,7 +60,7 @@ export const posts: Array<PostI> = [
     brand: "ARIEL",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 33,
+    price: 233,
     tags: ["body"],
 
   },
@@ -73,7 +73,7 @@ export const posts: Array<PostI> = [
     brand: "BiMAX",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 222222,
+    price: 1000,
     tags: [],
 
   },
@@ -98,7 +98,7 @@ export const posts: Array<PostI> = [
     brand: "ARIEL",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 144,
+    price: 1144,
     tags: [],
 
   },
@@ -124,7 +124,7 @@ export const posts: Array<PostI> = [
     brand: "AOS",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 1433444,
+    price: 143,
     tags: ["body"],
   },
   {
@@ -136,7 +136,7 @@ export const posts: Array<PostI> = [
     brand: "ARIEL",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 33,
+    price: 1133,
     tags: ["body"],
 
   },
@@ -149,7 +149,7 @@ export const posts: Array<PostI> = [
     brand: "ARIEL",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 333,
+    price: 2333,
     tags: [],
 
   },
@@ -162,7 +162,7 @@ export const posts: Array<PostI> = [
     brand: "BiMAX",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 22,
+    price: 322,
     tags: [],
 
   },
@@ -213,7 +213,7 @@ export const posts: Array<PostI> = [
     brand: "BiMAX",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 120,
+    price: 2120,
     tags: ["hands"],
 
   },
@@ -251,7 +251,7 @@ export const posts: Array<PostI> = [
     brand: "BiMAX",
     description:
       "Labore tempor commodo commodo tempor ea pariatur aliquip ea occaecat.",
-    price: 22,
+    price: 422,
     tags: [],
 
   },

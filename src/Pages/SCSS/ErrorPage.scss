@@ -1,0 +1,36 @@
+.error-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+
+    &__catalogue-button {
+        color: #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+
+        width: max-content;
+        height: max-content;
+
+        padding: 21px 54px;
+        background: #ffc85e;
+        border-radius: 79px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            background: #faa700;
+        }
+
+        &:active {
+            background: #9b701a;
+        }
+    }
+}
