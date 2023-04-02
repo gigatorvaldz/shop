@@ -3,6 +3,8 @@ import CartList from "../Components/CartList/CartList";
 import "./SCSS/CartPage.scss";
 import { useAppSelector, useAppDispatch } from "../Redux/hooks";
 import { resetCart } from "../Redux/Reducers/catalogueSlice";
+import BackButton from "../Components/UI/BackButton/BackButton";
+import { Link } from "react-router-dom";
 type Props = {};
 
 function CartPage({}: Props) {
@@ -43,13 +45,18 @@ function CartPage({}: Props) {
 
   return (
     <div className="cart-page container">
-      <div className="cart-page__breadcrumbs">
+      <div className="cart-page__breadcrumbs desktop-only">
         <a href="">
           <span className="cart-page__breadcrumbs-main">Главная</span>
         </a>
         <a href="">
           <span className="cart-page__breadcrumbs-add">Корзина</span>
         </a>
+      </div>
+      <div className="mobile-only">
+        <Link to="/catalogue">
+          <BackButton />
+        </Link>
       </div>
 
       <div className="cart-page__title">

@@ -22,6 +22,7 @@ import {
   getPagesCount,
 } from "../Utils/pageUtils";
 import { Link } from "react-router-dom";
+import BackButton from "../Components/UI/BackButton/BackButton";
 
 interface CataloguePageProps {}
 
@@ -86,7 +87,7 @@ const CataloguePage = (props: CataloguePageProps) => {
 
   return (
     <main className="catalogue container">
-      <div className="catalogue__breadcrumbs">
+      <div className="catalogue__breadcrumbs desktop-only">
         <a href="">
           <span className="catalogue__breadcrumbs-main">Главная</span>
         </a>
@@ -96,14 +97,17 @@ const CataloguePage = (props: CataloguePageProps) => {
           </span>
         </a>
       </div>
+      <div className="mobile-only">
+        <BackButton />
+      </div>
       <div className="catalogue__up-header">
         <h1>Косметика и гигиена</h1>
-        <div className="catalogue__header-sort">
+        <div className="catalogue__header-sort desktop-only">
           <span>Сортировка: </span>
           <Select onChange={selectChangeHandle} options={options} />
         </div>
       </div>
-      <ul className="catalogue__lower-header">
+      <ul className="catalogue__lower-header desktop-only">
         <li
           className={classNames(
             {
@@ -145,6 +149,10 @@ const CataloguePage = (props: CataloguePageProps) => {
       </ul>
       <div className="catalogue__main-section">
         <CatalogueSort />
+        <div className="catalogue__header-sort mobile-sort mobile-only">
+          <span>Сортировка: </span>
+          <Select onChange={selectChangeHandle} options={options} />
+        </div>
         <div className="catalogue__posts">
           <CatalogueList posts={currentPosts} />
           <div className="catalogue__page-list">

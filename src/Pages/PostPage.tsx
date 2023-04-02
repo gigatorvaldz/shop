@@ -12,10 +12,11 @@ import {
   updatePriceFilter,
 } from "../Redux/Reducers/catalogueSlice";
 
-import cardImage from "../img/card-image.png"
-import shareIcon from "../img/share-icon.svg"
-import downloadIconBlack from "../img/download-icon-black.svg"
-import uiTriangle from "../img/ui-triangle.svg"
+import cardImage from "../img/card-image.png";
+import shareIcon from "../img/share-icon.svg";
+import downloadIconBlack from "../img/download-icon-black.svg";
+import uiTriangle from "../img/ui-triangle.svg";
+import BackButton from "../Components/UI/BackButton/BackButton";
 
 type Props = {};
 
@@ -73,9 +74,14 @@ function PostPage({}: Props) {
           {post.brand} {post.name}
         </Link>
       </div>
+      <div className="mobile-only">
+        <Link to="/catalogue">
+          <BackButton />
+        </Link>
+      </div>
       <main className="post-page__main-info info">
         <div className="info__img">
-        <img src={cardImage} alt="post image" />
+          <img src={cardImage} alt="post image" />
         </div>
         <div className="info__description">
           <span className="info__stock">В наличии</span>
@@ -129,10 +135,7 @@ function PostPage({}: Props) {
               <a className="info__promo-price-list-wrapper" href="#">
                 <span>
                   <span>Прайс-лист </span>
-                  <img
-                    src={downloadIconBlack}
-                    alt="download icon"
-                  />
+                  <img src={downloadIconBlack} alt="download icon" />
                 </span>
               </a>
             </div>
