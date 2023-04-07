@@ -2,17 +2,16 @@ import React from "react";
 import "./CartButton.scss";
 import { useAppDispatch } from "../../../Redux/hooks";
 import { addToCart } from "../../../Redux/Reducers/catalogueSlice";
-import cartBtnIcon from "../../../img/cart-btn-icon.svg"
+import cartBtnIcon from "../../../img/cart-btn-icon.svg";
 
 interface CartButtonPropsI {
   onClick: (e: React.MouseEvent) => void;
 }
 
 function CartButton({ onClick }: CartButtonPropsI) {
-  const dispatch = useAppDispatch();
-
   return (
     <button
+      data-testid="cart-btn-testid"
       className="cart-button"
       onClick={onClick}
     >
