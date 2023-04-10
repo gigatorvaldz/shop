@@ -23,11 +23,11 @@ function PageList({
 
   return (
     <div className="page-list">
-      <button onClick={onPrevClick} className="page-list__back-arrow">
+      <button data-testid="prev-button" onClick={onPrevClick} className="page-list__back-arrow">
         <img src={backI} alt="back arrow" />
       </button>
       {pageArray.map((page) => (
-        <button
+        <button data-testid="page-button"
           className={classNames(
             {
               "page-list__item-active": currentPage == page,
@@ -40,7 +40,7 @@ function PageList({
           {page + 1}
         </button>
       ))}
-      <button onClick={onNextClick} className="page-list__next-arrow">
+      <button data-testid="next-button" onClick={onNextClick} className="page-list__next-arrow">
         <img src={nextI} alt="next arrow" />
       </button>
     </div>
