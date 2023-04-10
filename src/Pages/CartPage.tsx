@@ -44,7 +44,7 @@ function CartPage({}: Props) {
   };
 
   return (
-    <div className="cart-page container">
+    <div data-testid="cart-page-testid" className="cart-page container">
       <div className="cart-page__breadcrumbs desktop-only">
         <a href="">
           <span className="cart-page__breadcrumbs-main">Главная</span>

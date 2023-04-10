@@ -9,10 +9,10 @@ interface ErrorPropsI {
 
 const ErrorPage = ({ error }: ErrorPropsI) => {
   return (
-    <div className="error-page">
+    <div data-testid="error-page-testid" className="error-page">
       {error ? <p>{error}</p> : <p>Такой страницы нет</p>}
 
-      <Link className="error-page__catalogue-button" to="/catalogue">
+      <Link data-testid="error-link-testid" className="error-page__catalogue-button" to="/catalogue">
         <img src={catalogueIcon} alt="catalogue icon" />
         <p>Каталог</p>
       </Link>

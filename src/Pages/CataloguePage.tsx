@@ -86,7 +86,7 @@ const CataloguePage = (props: CataloguePageProps) => {
   };
 
   return (
-    <main className="catalogue container">
+    <main data-testid="catalogue-page-testid" className="catalogue container">
       <div className="catalogue__breadcrumbs desktop-only">
         <a href="">
           <span className="catalogue__breadcrumbs-main">Главная</span>

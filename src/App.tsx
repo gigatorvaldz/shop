@@ -10,10 +10,6 @@ import PostEditPage from './Pages/PostEditPage';
 import CreatePostPage from "./Pages/CreatePostPage";
 import ErrorPage from "./Pages/ErrorPage";
 
-// [Notes]:
-
-// Loader, Error Boundary, Breadcrumbs components (Utils)
-
 function App() {
   return (
     <div className="App">
