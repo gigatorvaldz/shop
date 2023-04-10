@@ -109,6 +109,7 @@ function PostPage({}: Props) {
               Редактировать
             </Link>
             <Link
+              data-testid="post-page-delete-btn"
               to="/catalogue"
               onClick={() => {
                 dispatch(deletePost(post.code));
