@@ -1,7 +1,5 @@
 import React from "react";
 import "./CartButton.scss";
-import { useAppDispatch } from "../../../Redux/hooks";
-import { addToCart } from "../../../Redux/Reducers/catalogueSlice";
 import cartBtnIcon from "../../../img/cart-btn-icon.svg";
 
 interface CartButtonPropsI {
