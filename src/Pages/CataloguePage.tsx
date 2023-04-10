@@ -24,20 +24,18 @@ import {
 import { Link } from "react-router-dom";
 import BackButton from "../Components/UI/BackButton/BackButton";
 
-interface CataloguePageProps {}
 
-const CataloguePage = (props: CataloguePageProps) => {
+const CataloguePage = () => {
   let posts = useAppSelector((state) => state.catalogue.posts);
-
-  const dispatch = useAppDispatch();
-
   const selectedTags = useAppSelector((state) => state.catalogue.selectedTags);
-
   const sortedMakers = useAppSelector((state) => state.catalogue.sortedMakers);
   const currentSort = useAppSelector((state) => state.catalogue.sortBy);
   const priceFilter = useAppSelector((state) => state.catalogue.priceFilter);
   const sortTags = useAppSelector((state) => state.catalogue.sortTags);
   const currentPage = useAppSelector((state) => state.catalogue.currentPage);
+
+  const dispatch = useAppDispatch();
+
   const sortedPosts = useAllSortPosts(
     posts,
     currentSort,
@@ -45,18 +43,6 @@ const CataloguePage = (props: CataloguePageProps) => {
     sortedMakers,
     sortTags
   );
-
-  let selectChangeHandle = (e: React.ChangeEvent<HTMLSelectElement>): void => {
-    let value = e.currentTarget.value;
-
-    const isFilter = (filter: string): filter is filterKeys =>
-      (filter as filterKeys) !== undefined;
-
-    if (!isFilter(value)) {
-      return;
-    }
-    dispatch(setSortBy(value));
-  };
 
   const options: Array<selectOptionType> = [
     { name: "Название", value: "name" },
@@ -71,6 +57,18 @@ const CataloguePage = (props: CataloguePageProps) => {
   let currentPosts = slicedPages[currentPage];
   let onPageListClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     dispatch(setCurrentPage(Number(e.currentTarget.textContent) - 1));
+  };
+
+  let selectChangeHandle = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    let value = e.currentTarget.value;
+
+    const isFilter = (filter: string): filter is filterKeys =>
+      (filter as filterKeys) !== undefined;
+
+    if (!isFilter(value)) {
+      return;
+    }
+    dispatch(setSortBy(value));
   };
 
   let onPageListNextClick = () => {

@@ -5,12 +5,13 @@ import { useAppSelector, useAppDispatch } from "../Redux/hooks";
 import { resetCart } from "../Redux/Reducers/catalogueSlice";
 import BackButton from "../Components/UI/BackButton/BackButton";
 import { Link } from "react-router-dom";
-type Props = {};
 
-function CartPage({}: Props) {
+function CartPage() {
+
   const currentCart = useAppSelector((state) => state.catalogue.currentCart);
   const cartPosts = useAppSelector((state) => state.catalogue.cartPosts);
   const posts = useAppSelector((state) => state.catalogue.posts);
+
   const dispatch = useAppDispatch();
 
   let totalPrice = 0;

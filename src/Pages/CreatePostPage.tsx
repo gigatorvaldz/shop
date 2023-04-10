@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { useAppSelector, useAppDispatch } from "../Redux/hooks";
+import { Link } from "react-router-dom";
+import { useAppDispatch } from "../Redux/hooks";
 import {
   createPost,
   resetFilters,
@@ -10,9 +10,7 @@ import {
 import { PostI } from "../Types/defaultTypes";
 import "./SCSS/PostEditPage.scss";
 
-type Props = {};
-
-function CreatePostPage({}: Props) {
+function CreatePostPage() {
   const [nameInput, setNameInput] = useState("");
   const [brandInput, setBrandInput] = useState("");
   const [descriptionInput, setDescriptionInput] = useState("");

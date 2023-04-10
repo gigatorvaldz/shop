@@ -19,9 +19,7 @@ type Props = {};
 function PostEditPage({}: Props) {
   const { code } = useParams();
   const posts = useAppSelector((state) => state.catalogue.posts);
-  const makerCheckBoxes = useAppSelector(
-    (state) => state.catalogue.makerSortCheckBoxes
-  );
+
   const dispatch = useAppDispatch();
   const post = posts.find((el) => el.code === Number(code));
 
