@@ -9,7 +9,7 @@ interface CartPropsI {
 
 function Cart({ total, price = -1 }: CartPropsI) {
   return (
-    <div className="lower-header__cart cart">
+    <div data-testid="cart-test-id" className="lower-header__cart cart">
       <div className="cart__logo">
         <span>{total}</span>
       </div>

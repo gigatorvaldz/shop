@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart component snapshot test 1`] = `
+<div
+  class="lower-header__cart cart"
+  data-testid="cart-test-id"
+>
+  <div
+    class="cart__logo"
+  >
+    <span>
+      123
+    </span>
+  </div>
+  <div
+    class="cart__info"
+  >
+    <p
+      class="cart__info-name"
+    >
+      Корзина
+    </p>
+    <p
+      class="cart__info-price"
+    >
+      12400
+       ₸
+    </p>
+  </div>
+</div>
+`;
