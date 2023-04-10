@@ -8,8 +8,8 @@ interface CatalogueListPropsI {
 }
 
 function CatalogueList({ posts, ...props }: CatalogueListPropsI) {
-  if (!posts) {
-    return <div className="catalogue-error">Товары не найдены.</div>;
+  if (!posts || posts.length < 1) {
+    return <div data-testid="catalogue-error" className="catalogue-error">Товары не найдены.</div>;
   }
 
   return (
